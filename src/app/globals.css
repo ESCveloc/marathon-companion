@@ -1,0 +1,40 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply bg-marathon-black text-marathon-text;
+  }
+
+  ::-webkit-scrollbar {
+    width: 8px;
+  }
+  ::-webkit-scrollbar-track {
+    @apply bg-marathon-dark;
+  }
+  ::-webkit-scrollbar-thumb {
+    @apply bg-marathon-slate rounded-full;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    @apply bg-marathon-orange;
+  }
+}
+
+@layer components {
+  .card {
+    @apply bg-marathon-dark border border-marathon-slate/50 rounded-lg p-4 hover:border-marathon-orange/50 transition-colors;
+  }
+  .btn-primary {
+    @apply bg-marathon-orange hover:bg-marathon-amber text-black font-semibold px-4 py-2 rounded-lg transition-colors;
+  }
+  .btn-secondary {
+    @apply bg-marathon-slate hover:bg-marathon-navy text-marathon-text px-4 py-2 rounded-lg border border-marathon-slate transition-colors;
+  }
+  .input-field {
+    @apply bg-marathon-navy border border-marathon-slate rounded-lg px-3 py-2 text-marathon-text placeholder-marathon-muted focus:outline-none focus:border-marathon-orange transition-colors;
+  }
+  .select-field {
+    @apply bg-marathon-navy border border-marathon-slate rounded-lg px-3 py-2 text-marathon-text focus:outline-none focus:border-marathon-orange transition-colors appearance-none cursor-pointer;
+  }
+}

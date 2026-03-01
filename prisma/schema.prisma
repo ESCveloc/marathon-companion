@@ -1,0 +1,139 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+enum Role {
+  TANK
+  DPS
+  SUPPORT
+  RECON
+  UTILITY
+}
+
+enum Rarity {
+  COMMON
+  UNCOMMON
+  RARE
+  LEGENDARY
+  EXOTIC
+}
+
+enum WeaponType {
+  ASSAULT_RIFLE
+  SMG
+  SNIPER
+  SHOTGUN
+  SIDEARM
+  LMG
+  ROCKET_LAUNCHER
+  GRENADE_LAUNCHER
+  FUSION_RIFLE
+}
+
+enum ModSlot {
+  BARREL
+  MAGAZINE
+  GRIP
+  SCOPE
+  STOCK
+  MUZZLE
+}
+
+enum ImplantSlot {
+  HEAD
+  CHEST
+  ARMS
+  LEGS
+  CLASS_ITEM
+}
+
+model Shell {
+  id               String   @id @default(cuid())
+  name             String   @unique
+  description      String
+  role             Role
+  primeAbilityName String
+  primeAbilityDesc String
+  primeCooldown    Int
+  tactAbilityName  String
+  tactAbilityDesc  String
+  tactCooldown     Int
+  baseStats        Json     // { health, shield, speed, resilience, recovery }
+  iconUrl          String   @default("")
+  cores            Core[]
+  builds           Build[]
+  createdAt        DateTime @default(now())
+}
+
+model Weapon {
+  id          String     @id @default(cuid())
+  name        String     @unique
+  type        WeaponType
+  rarity      Rarity
+  baseDamage  Int
+  fireRate    Int
+  range       Int
+  stability   Int
+  handling    Int
+  reloadSpeed Int
+  description String
+  iconUrl     String     @default("")
+  mods        WeaponMod[] @relation("WeaponToMods")
+  builds      Build[]     @relation("BuildWeapons")
+  createdAt   DateTime    @default(now())
+}
+
+model WeaponMod {
+  id            String   @id @default(cuid())
+  name          String   @unique
+  slot          ModSlot
+  statModifiers Json     // { range: +10, stability: -5, etc. }
+  description   String
+  rarity        Rarity
+  weapons       Weapon[] @relation("WeaponToMods")
+  builds        Build[]  @relation("BuildWeaponMods")
+  createdAt     DateTime @default(now())
+}
+
+model Core {
+  id                  String   @id @default(cuid())
+  name                String   @unique
+  shellId             String
+  shell               Shell    @relation(fields: [shellId], references: [id])
+  abilityModification String
+  statModifiers       Json     // { health: +20, speed: -5, etc. }
+  rarity              Rarity
+  builds              Build[]
+  createdAt           DateTime @default(now())
+}
+
+model Implant {
+  id          String      @id @default(cuid())
+  name        String      @unique
+  slot        ImplantSlot
+  statBonuses Json        // { heatCapacity: +15, lootSpeed: +8, etc. }
+  rarity      Rarity
+  description String
+  builds      Build[]     @relation("BuildImplants")
+  createdAt   DateTime    @default(now())
+}
+
+model Build {
+  id           String      @id @default(cuid())
+  name         String
+  shellId      String
+  shell        Shell       @relation(fields: [shellId], references: [id])
+  coreId       String?
+  core         Core?       @relation(fields: [coreId], references: [id])
+  implants     Implant[]   @relation("BuildImplants")
+  weapons      Weapon[]    @relation("BuildWeapons")
+  weaponMods   WeaponMod[] @relation("BuildWeaponMods")
+  totalStats   Json        @default("{}")
+  createdAt    DateTime    @default(now())
+  updatedAt    DateTime    @updatedAt
+}

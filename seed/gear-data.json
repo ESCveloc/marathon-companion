@@ -1,0 +1,1235 @@
+{
+  "shells": [
+    {
+      "name": "Titan",
+      "description": "A hulking Runner shell forged from salvaged colony-ship bulkheads. The Titan was originally designed as a structural reinforcement frame for deep-space EVA work, repurposed for combat when the Foehn arrived. Its layered ablative plating and kinetic dampeners make it the last shell standing when the zone collapses.",
+      "role": "TANK",
+      "primeAbilityName": "Aegis Wall",
+      "primeAbilityDesc": "Deploy a translucent hard-light shield wall that absorbs incoming projectile and energy damage for 8 seconds. Allies can shoot through the wall from behind while enemies cannot penetrate it. The wall has its own health pool that scales with the Titan's shield stat.",
+      "primeCooldown": 45,
+      "tactAbilityName": "Seismic Slam",
+      "tactAbilityDesc": "Leap forward and slam the ground, sending a radial shockwave that staggers nearby enemies and deals moderate kinetic damage. Enemies caught in the inner radius are briefly knocked down.",
+      "tactCooldown": 18,
+      "baseStats": {
+        "health": 92,
+        "shield": 85,
+        "speed": 28,
+        "resilience": 90,
+        "recovery": 45
+      },
+      "iconUrl": ""
+    },
+    {
+      "name": "Wraith",
+      "description": "A razor-thin Runner shell built around a stolen Clovis phase-shift prototype. The Wraith trades durability for lethal speed, flickering between visible and invisible spectrums mid-combat. Favored by Runners who believe the best defense is killing everything in the room before it can shoot back.",
+      "role": "DPS",
+      "primeAbilityName": "Shadow Dash",
+      "primeAbilityDesc": "Phase into a dimensional fold, becoming invisible and gaining a 40% speed boost for 4 seconds. Exiting the phase grants a brief damage bonus to your next attack. Taking damage while phased will cancel the effect early.",
+      "primeCooldown": 30,
+      "tactAbilityName": "Venom Blades",
+      "tactAbilityDesc": "Throw a fan of three mono-edged throwing knives that deal high precision damage. Headshot kills with Venom Blades partially refund the tactical cooldown. Knives ricochet once off hard surfaces.",
+      "tactCooldown": 12,
+      "baseStats": {
+        "health": 45,
+        "shield": 30,
+        "speed": 95,
+        "resilience": 35,
+        "recovery": 60
+      },
+      "iconUrl": ""
+    },
+    {
+      "name": "Nomad",
+      "description": "A field-medic Runner shell cobbled together from UESC medical transports and adaptive nano-fiber mesh. The Nomad keeps fireteams operational deep in hostile extraction zones where resupply is impossible. Its onboard fabrication suite can synthesize basic medical compounds and ammunition from ambient matter.",
+      "role": "SUPPORT",
+      "primeAbilityName": "Mending Pulse",
+      "primeAbilityDesc": "Emit a radial healing pulse that restores health to all allies within 15 meters over 5 seconds. The pulse also cleanses damage-over-time effects and grants a brief regeneration buff that persists for 3 seconds after leaving the radius.",
+      "primeCooldown": 35,
+      "tactAbilityName": "Supply Cache",
+      "tactAbilityDesc": "Deploy a small supply drop that regenerates ammunition for allies who interact with it. The cache contains enough reserves for 3 full reloads and lasts 20 seconds before expiring. Only one cache can be active at a time.",
+      "tactCooldown": 25,
+      "baseStats": {
+        "health": 65,
+        "shield": 60,
+        "speed": 55,
+        "resilience": 55,
+        "recovery": 78
+      },
+      "iconUrl": ""
+    },
+    {
+      "name": "Phantom",
+      "description": "A lightweight reconnaissance shell woven from adaptive camo-fiber and packed with long-range sensor arrays. The Phantom was designed for pathfinder operations on uncharted worlds, mapping threats before the main force arrives. In the extraction zones, it serves as the eyes of any fireteam smart enough to bring one.",
+      "role": "RECON",
+      "primeAbilityName": "Spectral Scan",
+      "primeAbilityDesc": "Release a wide-area sensor pulse that marks all enemies within 50 meters for 6 seconds, revealing them through walls and terrain to your entire fireteam. Marked enemies also have their health bars visible and take 5% increased damage from all sources.",
+      "primeCooldown": 40,
+      "tactAbilityName": "Shroud Grenade",
+      "tactAbilityDesc": "Toss a smoke grenade that creates a dense cloud of sensor-jamming particles for 8 seconds. Enemies inside the cloud lose aim assist and radar tracking. Allies inside gain brief invisibility on radar.",
+      "tactCooldown": 15,
+      "baseStats": {
+        "health": 38,
+        "shield": 42,
+        "speed": 88,
+        "resilience": 30,
+        "recovery": 65
+      },
+      "iconUrl": ""
+    },
+    {
+      "name": "Bastion",
+      "description": "The heaviest Runner shell in active service, built from decommissioned orbital defense platform components. The Bastion moves like a glacier and hits like a meteor. Its integrated shield generators were originally designed to protect capital ships, scaled down to personal use at significant cost to mobility. Where a Bastion stands, a fortress rises.",
+      "role": "TANK",
+      "primeAbilityName": "Fortress Protocol",
+      "primeAbilityDesc": "Activate a powerful over-shield generator that grants you and nearby allies within 8 meters a bonus shield layer equal to 50% of the Bastion's max shield. The over-shield decays over 10 seconds and does not regenerate, but absorbs all damage types including armor-piercing rounds.",
+      "primeCooldown": 55,
+      "tactAbilityName": "Rampart Barricade",
+      "tactAbilityDesc": "Slam down a heavy physical barricade that provides waist-high cover. The barricade has substantial health, blocks all projectiles, and slows enemies who attempt to vault over it. Lasts 15 seconds or until destroyed.",
+      "tactCooldown": 20,
+      "baseStats": {
+        "health": 80,
+        "shield": 98,
+        "speed": 15,
+        "resilience": 95,
+        "recovery": 35
+      },
+      "iconUrl": ""
+    },
+    {
+      "name": "Striker",
+      "description": "An offensive Runner shell threaded with arc-capacitor weave and volatile energy cells. The Striker was built to break stalemates, designed for high-risk breaching operations where overwhelming force is the only viable strategy. Its internal power grid can overload on command, turning the entire shell into a weapon.",
+      "role": "DPS",
+      "primeAbilityName": "Arc Overload",
+      "primeAbilityDesc": "Discharge all stored arc energy in a devastating area-of-effect blast centered on your position. Enemies within 12 meters take heavy arc damage and are jolted, causing chain lightning to arc between closely grouped targets. Using Arc Overload temporarily disables your shield regeneration for 5 seconds.",
+      "primeCooldown": 50,
+      "tactAbilityName": "Concussion Charge",
+      "tactAbilityDesc": "Throw a concussion flashbang that detonates on impact, blinding and disorienting enemies within its blast radius for 3 seconds. Affected enemies have reduced accuracy and movement speed. Does minor damage on direct hit.",
+      "tactCooldown": 14,
+      "baseStats": {
+        "health": 58,
+        "shield": 50,
+        "speed": 62,
+        "resilience": 48,
+        "recovery": 55
+      },
+      "iconUrl": ""
+    },
+    {
+      "name": "Conduit",
+      "description": "A modular utility Runner shell designed by rogue engineers who believed specialization was a death sentence in the extraction zones. The Conduit features universal hardpoints and an adaptive power grid that can be reconfigured on the fly. It does nothing best, but it does everything well enough to survive.",
+      "role": "UTILITY",
+      "primeAbilityName": "Tether Line",
+      "primeAbilityDesc": "Fire a grapple hook that latches onto surfaces up to 30 meters away, rapidly pulling you to the anchor point. Can be used to reach elevated positions, cross gaps, or close distance on enemies. Brief cooldown reduction if used to reach otherwise inaccessible areas.",
+      "primeCooldown": 20,
+      "tactAbilityName": "Disruption Pulse",
+      "tactAbilityDesc": "Release a localized EMP burst that disables enemy electronics, turrets, and deployables within 10 meters for 4 seconds. Also briefly scrambles enemy radar and interrupts ability activation. Does not affect allied equipment.",
+      "tactCooldown": 22,
+      "baseStats": {
+        "health": 60,
+        "shield": 58,
+        "speed": 65,
+        "resilience": 55,
+        "recovery": 62
+      },
+      "iconUrl": ""
+    }
+  ],
+  "weapons": [
+    {
+      "name": "Khostov-7R",
+      "type": "ASSAULT_RIFLE",
+      "rarity": "COMMON",
+      "baseDamage": 22,
+      "fireRate": 600,
+      "range": 52,
+      "stability": 58,
+      "handling": 60,
+      "reloadSpeed": 55,
+      "description": "Standard-issue colony defense rifle. Reliable, abundant, and utterly unremarkable. Millions were manufactured before the collapse, and they keep turning up in every extraction zone across the system.",
+      "iconUrl": ""
+    },
+    {
+      "name": "Foehn Reaper AR3",
+      "type": "ASSAULT_RIFLE",
+      "rarity": "UNCOMMON",
+      "baseDamage": 26,
+      "fireRate": 640,
+      "range": 58,
+      "stability": 62,
+      "handling": 55,
+      "reloadSpeed": 50,
+      "description": "Reverse-engineered from alien weapon fragments recovered on Tau Ceti IV. The firing mechanism occasionally emits an unsettling harmonic whine that no engineer has been able to explain or eliminate.",
+      "iconUrl": ""
+    },
+    {
+      "name": "Harbinger MK-V",
+      "type": "ASSAULT_RIFLE",
+      "rarity": "RARE",
+      "baseDamage": 32,
+      "fireRate": 580,
+      "range": 65,
+      "stability": 70,
+      "handling": 52,
+      "reloadSpeed": 48,
+      "description": "A precision assault platform favored by veteran Runners. The MK-V's integrated ballistic computer adjusts muzzle velocity in real-time based on target distance, ensuring consistent damage at any engagement range.",
+      "iconUrl": ""
+    },
+    {
+      "name": "Polaris Lance",
+      "type": "ASSAULT_RIFLE",
+      "rarity": "LEGENDARY",
+      "baseDamage": 38,
+      "fireRate": 540,
+      "range": 78,
+      "stability": 72,
+      "handling": 48,
+      "reloadSpeed": 45,
+      "description": "A masterwork rifle assembled in the forges beneath Deimos Station. Every fifth precision hit triggers an incendiary payload that ignites the target. The weapon hums faintly when pointed at something it wants to kill.",
+      "iconUrl": ""
+    },
+    {
+      "name": "Zeitgeist Protocol",
+      "type": "ASSAULT_RIFLE",
+      "rarity": "EXOTIC",
+      "baseDamage": 42,
+      "fireRate": 520,
+      "range": 82,
+      "stability": 75,
+      "handling": 44,
+      "reloadSpeed": 40,
+      "description": "A temporal-displacement rifle that fires rounds microseconds before the trigger is pulled. Targets report being hit by bullets they never saw fired. UESC flagged this weapon for study, but every researcher assigned to it has since disappeared.",
+      "iconUrl": ""
+    },
+    {
+      "name": "Vesper-9",
+      "type": "SMG",
+      "rarity": "COMMON",
+      "baseDamage": 14,
+      "fireRate": 1050,
+      "range": 22,
+      "stability": 35,
+      "handling": 78,
+      "reloadSpeed": 72,
+      "description": "A cheap, fast-cycling submachine gun that burns through magazines like oxygen in a hull breach. Inaccurate beyond spitting distance, but devastating in the tight corridors of derelict ships.",
+      "iconUrl": ""
+    },
+    {
+      "name": "Phosphex Needle",
+      "type": "SMG",
+      "rarity": "UNCOMMON",
+      "baseDamage": 16,
+      "fireRate": 980,
+      "range": 28,
+      "stability": 42,
+      "handling": 75,
+      "reloadSpeed": 68,
+      "description": "Fires micro-flechettes coated in a corrosive phosphorescent compound. Targets hit by sustained fire begin to glow, making them visible through smoke and darkness. The coating also eats through light armor over time.",
+      "iconUrl": ""
+    },
+    {
+      "name": "Blacksite Whisper",
+      "type": "SMG",
+      "rarity": "RARE",
+      "baseDamage": 20,
+      "fireRate": 920,
+      "range": 32,
+      "stability": 50,
+      "handling": 80,
+      "reloadSpeed": 70,
+      "description": "An intelligence-service weapon that was never supposed to reach the field. Its integrated suppressor reduces muzzle signature to near-zero, and its subsonic ammunition keeps you off enemy radar during sustained fire.",
+      "iconUrl": ""
+    },
+    {
+      "name": "The Entropy Engine",
+      "type": "SMG",
+      "rarity": "EXOTIC",
+      "baseDamage": 24,
+      "fireRate": 1100,
+      "range": 26,
+      "stability": 30,
+      "handling": 85,
+      "reloadSpeed": 75,
+      "description": "This weapon should not exist. Its ammunition is drawn from a micro-singularity housed in the receiver, producing rounds of compressed void energy. Each kill increases the fire rate for 3 seconds, stacking up to 5 times. The weapon vibrates with malicious intent.",
+      "iconUrl": ""
+    },
+    {
+      "name": "Longwatch SR1",
+      "type": "SNIPER",
+      "rarity": "UNCOMMON",
+      "baseDamage": 68,
+      "fireRate": 120,
+      "range": 92,
+      "stability": 55,
+      "handling": 30,
+      "reloadSpeed": 35,
+      "description": "A bolt-action marksman rifle with a free-floating barrel and match-grade optics. The SR1 is the weapon of choice for Runners who prefer to let their fireteam push while they provide overwatch from a comfortable distance.",
+      "iconUrl": ""
+    },
+    {
+      "name": "Threaded Needle",
+      "type": "SNIPER",
+      "rarity": "RARE",
+      "baseDamage": 78,
+      "fireRate": 100,
+      "range": 95,
+      "stability": 60,
+      "handling": 28,
+      "reloadSpeed": 32,
+      "description": "Fires a magnetically accelerated tungsten penetrator that can punch through multiple targets and light cover. The round leaves a visible ionized trail in atmosphere, revealing your position but also terrifying anyone standing behind your target.",
+      "iconUrl": ""
+    },
+    {
+      "name": "Void Covenant",
+      "type": "SNIPER",
+      "rarity": "LEGENDARY",
+      "baseDamage": 88,
+      "fireRate": 90,
+      "range": 98,
+      "stability": 65,
+      "handling": 25,
+      "reloadSpeed": 28,
+      "description": "A sacred weapon retrieved from the ruins of a dead civilization on Luyten b. The scope displays targeting data in a language no living being can read, yet somehow the shooter always understands. Precision kills cause targets to collapse into brief gravitational anomalies.",
+      "iconUrl": ""
+    },
+    {
+      "name": "Whisper of Aphelion",
+      "type": "SNIPER",
+      "rarity": "EXOTIC",
+      "baseDamage": 95,
+      "fireRate": 72,
+      "range": 100,
+      "stability": 70,
+      "handling": 22,
+      "reloadSpeed": 25,
+      "description": "A weapon from beyond the system's edge that fires concentrated beams of absolute cold. Targets hit by the beam are flash-frozen for 1.5 seconds. Three rapid precision hits generate a cryo-detonation that shatters frozen targets and damages everything nearby.",
+      "iconUrl": ""
+    },
+    {
+      "name": "Trenchfoot Mk.II",
+      "type": "SHOTGUN",
+      "rarity": "COMMON",
+      "baseDamage": 55,
+      "fireRate": 140,
+      "range": 12,
+      "stability": 40,
+      "handling": 55,
+      "reloadSpeed": 38,
+      "description": "A pump-action scattergun that has been standard equipment for boarding parties since before anyone can remember. Crude, loud, and effective at the kind of ranges where you can smell what your enemy had for breakfast.",
+      "iconUrl": ""
+    },
+    {
+      "name": "Devourer Spread",
+      "type": "SHOTGUN",
+      "rarity": "RARE",
+      "baseDamage": 72,
+      "fireRate": 160,
+      "range": 16,
+      "stability": 45,
+      "handling": 50,
+      "reloadSpeed": 42,
+      "description": "A semi-automatic shotgun with an alien-alloy barrel that somehow widens the pellet spread while maintaining lethal density. Each shell fragments into self-guiding micro-munitions that curve toward center mass. The reload animation is disturbingly organic.",
+      "iconUrl": ""
+    },
+    {
+      "name": "Cascade Judgment",
+      "type": "SHOTGUN",
+      "rarity": "LEGENDARY",
+      "baseDamage": 85,
+      "fireRate": 120,
+      "range": 18,
+      "stability": 50,
+      "handling": 45,
+      "reloadSpeed": 35,
+      "description": "This weapon fires a concentrated wave of kinetic force that ignores conventional armor. Targets hit at close range are launched backward with tremendous force. Kills at point-blank range trigger a cascading shockwave that damages everything in a narrow cone behind the target.",
+      "iconUrl": ""
+    },
+    {
+      "name": "Settler's Companion",
+      "type": "SIDEARM",
+      "rarity": "COMMON",
+      "baseDamage": 18,
+      "fireRate": 450,
+      "range": 28,
+      "stability": 65,
+      "handling": 90,
+      "reloadSpeed": 82,
+      "description": "A semi-automatic pistol carried by every colonist who ever set foot on an alien world. It won't win any firefights, but it's drawn faster than anything else in your arsenal. Sometimes that half-second is the difference between extraction and a body bag.",
+      "iconUrl": ""
+    },
+    {
+      "name": "Echo Thorn",
+      "type": "SIDEARM",
+      "rarity": "RARE",
+      "baseDamage": 28,
+      "fireRate": 380,
+      "range": 35,
+      "stability": 70,
+      "handling": 88,
+      "reloadSpeed": 78,
+      "description": "A compact hand cannon that fires crystallized sound. Each round produces a disorienting sonic bloom on impact, briefly scrambling the target's HUD and audio. Favored by Runners who like to soften targets before closing in.",
+      "iconUrl": ""
+    },
+    {
+      "name": "Last Rite",
+      "type": "SIDEARM",
+      "rarity": "LEGENDARY",
+      "baseDamage": 38,
+      "fireRate": 320,
+      "range": 42,
+      "stability": 72,
+      "handling": 85,
+      "reloadSpeed": 70,
+      "description": "A gunsmith's final creation, each one hand-tuned and inscribed with the name of its intended owner. The Last Rite deals bonus damage to targets below 30% health and automatically loads a high-caliber mercy round as the final shot in each magazine.",
+      "iconUrl": ""
+    },
+    {
+      "name": "Chainlink LMG",
+      "type": "LMG",
+      "rarity": "UNCOMMON",
+      "baseDamage": 24,
+      "fireRate": 720,
+      "range": 48,
+      "stability": 38,
+      "handling": 22,
+      "reloadSpeed": 20,
+      "description": "A belt-fed light machine gun that rewards those patient enough to hold the trigger. The longer you fire, the tighter the grouping becomes as the barrel harmonics stabilize. Just don't try to sprint with it.",
+      "iconUrl": ""
+    },
+    {
+      "name": "Fenris Howl",
+      "type": "LMG",
+      "rarity": "RARE",
+      "baseDamage": 30,
+      "fireRate": 680,
+      "range": 55,
+      "stability": 45,
+      "handling": 25,
+      "reloadSpeed": 22,
+      "description": "An LMG fitted with a cryogenic cooling jacket that prevents overheating at the cost of freezing the air around the barrel. Extended fire creates a localized fog bank around the shooter, providing inadvertent concealment. The howling sound it makes is just the coolant venting.",
+      "iconUrl": ""
+    },
+    {
+      "name": "Avalanche Doctrine",
+      "type": "LMG",
+      "rarity": "LEGENDARY",
+      "baseDamage": 36,
+      "fireRate": 640,
+      "range": 62,
+      "stability": 52,
+      "handling": 20,
+      "reloadSpeed": 18,
+      "description": "A masterwork suppression platform that fires alternating kinetic and incendiary rounds. Every 50th round is a high-explosive tracer that detonates on impact. The weapon's AI tracks your suppression patterns and subtly adjusts aim to maximize area denial.",
+      "iconUrl": ""
+    },
+    {
+      "name": "Exodus Launcher",
+      "type": "ROCKET_LAUNCHER",
+      "rarity": "UNCOMMON",
+      "baseDamage": 82,
+      "fireRate": 100,
+      "range": 65,
+      "stability": 45,
+      "handling": 18,
+      "reloadSpeed": 15,
+      "description": "A single-tube rocket launcher salvaged from colonial defense emplacements. Point it at something you want removed from existence and pull the trigger. Not recommended for indoor use, though Runners keep using it indoors anyway.",
+      "iconUrl": ""
+    },
+    {
+      "name": "Calamity Spike",
+      "type": "ROCKET_LAUNCHER",
+      "rarity": "RARE",
+      "baseDamage": 90,
+      "fireRate": 100,
+      "range": 72,
+      "stability": 48,
+      "handling": 15,
+      "reloadSpeed": 12,
+      "description": "Fires a magnetically guided warhead that can soft-lock onto hostile targets after a brief aim-down-sights charge. The warhead detonates in a shaped charge pattern, focusing the blast forward for increased single-target damage at the cost of reduced area coverage.",
+      "iconUrl": ""
+    },
+    {
+      "name": "Worldbreaker",
+      "type": "ROCKET_LAUNCHER",
+      "rarity": "LEGENDARY",
+      "baseDamage": 100,
+      "fireRate": 100,
+      "range": 80,
+      "stability": 42,
+      "handling": 12,
+      "reloadSpeed": 10,
+      "description": "A weapon that fires miniature gravitational warheads which create a brief micro-singularity on detonation. Everything within the blast radius is pulled toward the impact point before the singularity collapses in a violent burst. Banned by every civilized authority. Runners are not civilized.",
+      "iconUrl": ""
+    },
+    {
+      "name": "Conclave Mortar",
+      "type": "GRENADE_LAUNCHER",
+      "rarity": "UNCOMMON",
+      "baseDamage": 58,
+      "fireRate": 130,
+      "range": 50,
+      "stability": 42,
+      "handling": 35,
+      "reloadSpeed": 30,
+      "description": "A drum-fed grenade launcher that lobs explosive rounds in a gentle arc. The grenades detonate on a short fuse after their first bounce, allowing skilled Runners to bank shots around corners and into entrenched positions.",
+      "iconUrl": ""
+    },
+    {
+      "name": "Sporebloom",
+      "type": "GRENADE_LAUNCHER",
+      "rarity": "LEGENDARY",
+      "baseDamage": 70,
+      "fireRate": 110,
+      "range": 55,
+      "stability": 48,
+      "handling": 32,
+      "reloadSpeed": 25,
+      "description": "Fires biological payload grenades harvested from fungal colonies on Proxima b. On detonation, the grenade releases a cloud of corrosive spores that linger for 5 seconds, dealing damage over time to anything that passes through. The spores seem to preferentially target non-human biology.",
+      "iconUrl": ""
+    },
+    {
+      "name": "Convergence Cell",
+      "type": "FUSION_RIFLE",
+      "rarity": "UNCOMMON",
+      "baseDamage": 62,
+      "fireRate": 180,
+      "range": 42,
+      "stability": 50,
+      "handling": 35,
+      "reloadSpeed": 40,
+      "description": "A charge-fire energy weapon that concentrates plasma into a tight bolt. Requires a brief charge-up before firing, rewarding patient timing with high burst damage. The charging whine is loud enough to announce your intentions to anything with ears.",
+      "iconUrl": ""
+    },
+    {
+      "name": "Helios Protocol",
+      "type": "FUSION_RIFLE",
+      "rarity": "RARE",
+      "baseDamage": 72,
+      "fireRate": 160,
+      "range": 48,
+      "stability": 55,
+      "handling": 38,
+      "reloadSpeed": 35,
+      "description": "A military-grade fusion rifle with an overcharged capacitor bank. Holding the charge beyond the optimal window converts the standard bolt into a wide-angle beam that deals reduced damage but hits multiple targets in a horizontal line.",
+      "iconUrl": ""
+    },
+    {
+      "name": "Tesseract Condenser",
+      "type": "FUSION_RIFLE",
+      "rarity": "EXOTIC",
+      "baseDamage": 85,
+      "fireRate": 140,
+      "range": 55,
+      "stability": 58,
+      "handling": 30,
+      "reloadSpeed": 28,
+      "description": "A four-dimensional energy weapon that fires bolts which exist in multiple spatial planes simultaneously. The bolt appears to hit the target from several angles at once, bypassing directional shields and cover. Sustained use causes mild spatial disorientation in the wielder. Prolonged exposure has caused some Runners to see geometry that isn't there.",
+      "iconUrl": ""
+    }
+  ],
+  "weaponMods": [
+    {
+      "name": "Extended Barrel",
+      "slot": "BARREL",
+      "statModifiers": { "range": 12, "handling": -5 },
+      "description": "A lengthened barrel that increases effective range at the cost of handling speed.",
+      "rarity": "COMMON"
+    },
+    {
+      "name": "Polygonal Rifling",
+      "slot": "BARREL",
+      "statModifiers": { "stability": 8, "range": 4 },
+      "description": "Rounded barrel grooves that reduce mechanical wear and improve projectile stability.",
+      "rarity": "UNCOMMON"
+    },
+    {
+      "name": "Hammer-Forged Barrel",
+      "slot": "BARREL",
+      "statModifiers": { "range": 15, "stability": -8 },
+      "description": "Cold-hammered alloy barrel that significantly extends effective range but increases felt recoil.",
+      "rarity": "RARE"
+    },
+    {
+      "name": "Cryogenic Bore",
+      "slot": "BARREL",
+      "statModifiers": { "range": 10, "stability": 10 },
+      "description": "A barrel lined with cryo-treated composites that reduce thermal expansion and maintain accuracy during sustained fire.",
+      "rarity": "RARE"
+    },
+    {
+      "name": "Fluted Barrel",
+      "slot": "BARREL",
+      "statModifiers": { "handling": 10, "stability": 3 },
+      "description": "Lightweight fluted barrel that improves handling characteristics without sacrificing much stability.",
+      "rarity": "UNCOMMON"
+    },
+    {
+      "name": "Arrowhead Brake",
+      "slot": "BARREL",
+      "statModifiers": { "stability": 14, "handling": -6 },
+      "description": "A heavy directional compensator that dramatically reduces vertical recoil at the cost of weapon agility.",
+      "rarity": "RARE"
+    },
+    {
+      "name": "Full Bore",
+      "slot": "BARREL",
+      "statModifiers": { "range": 18, "stability": -10, "handling": -5 },
+      "description": "Maximum-diameter barrel bore for extreme range. The aggressive machining creates punishing recoil and sluggish handling.",
+      "rarity": "LEGENDARY"
+    },
+    {
+      "name": "Chambered Compensator",
+      "slot": "BARREL",
+      "statModifiers": { "stability": 10, "range": -3 },
+      "description": "Integrated gas-port compensator that bleeds muzzle energy to reduce recoil, slightly reducing muzzle velocity.",
+      "rarity": "COMMON"
+    },
+    {
+      "name": "Void-Threaded Barrel",
+      "slot": "BARREL",
+      "statModifiers": { "range": 14, "stability": 8, "handling": -4 },
+      "description": "A barrel threaded with exotic void-matter filaments that stabilize projectile trajectory beyond normal physics. Heavy and expensive.",
+      "rarity": "LEGENDARY"
+    },
+    {
+      "name": "Smallbore",
+      "slot": "BARREL",
+      "statModifiers": { "range": 5, "stability": 5 },
+      "description": "A tighter bore diameter that provides modest improvements to both range and stability. A balanced choice.",
+      "rarity": "COMMON"
+    },
+    {
+      "name": "Extended Magazine",
+      "slot": "MAGAZINE",
+      "statModifiers": { "reloadSpeed": -8 },
+      "description": "A larger capacity magazine that carries more rounds but takes longer to swap due to increased weight.",
+      "rarity": "COMMON"
+    },
+    {
+      "name": "Armor-Piercing Rounds",
+      "slot": "MAGAZINE",
+      "statModifiers": { "range": 8, "stability": -3 },
+      "description": "Tungsten-core ammunition designed to penetrate hardened targets. Increased penetration range but slightly more recoil per shot.",
+      "rarity": "UNCOMMON"
+    },
+    {
+      "name": "High-Caliber Rounds",
+      "slot": "MAGAZINE",
+      "statModifiers": { "range": 6, "stability": -5 },
+      "description": "Oversized ammunition that staggers targets on hit. The added powder charge increases recoil noticeably.",
+      "rarity": "UNCOMMON"
+    },
+    {
+      "name": "Ricochet Rounds",
+      "slot": "MAGAZINE",
+      "statModifiers": { "stability": 5, "range": 3 },
+      "description": "Uniquely shaped projectiles that bounce off hard surfaces, potentially hitting targets behind cover. The gyroscopic design also improves stability.",
+      "rarity": "RARE"
+    },
+    {
+      "name": "Alloy Magazine",
+      "slot": "MAGAZINE",
+      "statModifiers": { "reloadSpeed": 12 },
+      "description": "An ultralight alloy magazine housing that reduces reload time significantly. Same capacity, less weight.",
+      "rarity": "UNCOMMON"
+    },
+    {
+      "name": "Tactical Mag",
+      "slot": "MAGAZINE",
+      "statModifiers": { "reloadSpeed": 6, "stability": 4 },
+      "description": "A well-designed magazine with improved spring tension and an ergonomic release mechanism. Better in every way that matters.",
+      "rarity": "RARE"
+    },
+    {
+      "name": "Ionized Battery",
+      "slot": "MAGAZINE",
+      "statModifiers": { "reloadSpeed": 15, "range": 5 },
+      "description": "A plasma-ionized ammunition feed system that accelerates both reload cycling and projectile velocity. Standard issue for UESC special operations.",
+      "rarity": "LEGENDARY"
+    },
+    {
+      "name": "Subsonic Rounds",
+      "slot": "MAGAZINE",
+      "statModifiers": { "stability": 10, "range": -6 },
+      "description": "Low-velocity ammunition that reduces weapon report and muzzle climb but sacrifices effective range. Ideal for suppressed weapons.",
+      "rarity": "UNCOMMON"
+    },
+    {
+      "name": "Void-Charged Cartridges",
+      "slot": "MAGAZINE",
+      "statModifiers": { "range": 12, "stability": 8, "reloadSpeed": -5 },
+      "description": "Ammunition infused with void energy particles that extend ballistic range and reduce spin decay. The exotic material makes magazine cycling slower.",
+      "rarity": "LEGENDARY"
+    },
+    {
+      "name": "Quick-Draw Grip",
+      "slot": "GRIP",
+      "statModifiers": { "handling": 12, "stability": -4 },
+      "description": "A contoured grip with a hair-trigger mechanism that dramatically improves draw and aim speed at the cost of steady hold.",
+      "rarity": "UNCOMMON"
+    },
+    {
+      "name": "Polymer Grip",
+      "slot": "GRIP",
+      "statModifiers": { "handling": 6, "stability": 3 },
+      "description": "A textured polymer grip that provides a secure hold in all conditions. Minor improvements across the board.",
+      "rarity": "COMMON"
+    },
+    {
+      "name": "Stippled Grip Tape",
+      "slot": "GRIP",
+      "statModifiers": { "handling": 8, "reloadSpeed": 5, "stability": -5 },
+      "description": "Aggressive stipple pattern that improves grip speed and reload dexterity, but the reduced contact surface slightly increases felt recoil.",
+      "rarity": "UNCOMMON"
+    },
+    {
+      "name": "Ergonomic Grip",
+      "slot": "GRIP",
+      "statModifiers": { "stability": 8, "handling": -3 },
+      "description": "An anatomically sculpted grip that locks the hand in a stable firing position. Excellent for sustained fire, slower on the draw.",
+      "rarity": "UNCOMMON"
+    },
+    {
+      "name": "Rubberized Grip",
+      "slot": "GRIP",
+      "statModifiers": { "stability": 12, "handling": -6 },
+      "description": "A thick rubberized grip that absorbs recoil energy. The additional bulk slows weapon handling but provides a noticeably steadier platform.",
+      "rarity": "RARE"
+    },
+    {
+      "name": "Neural-Link Grip",
+      "slot": "GRIP",
+      "statModifiers": { "handling": 15, "stability": 8 },
+      "description": "A grip embedded with neural-interface filaments that connect directly to the Runner's shell motor systems. Weapon becomes an extension of the body.",
+      "rarity": "LEGENDARY"
+    },
+    {
+      "name": "Weighted Grip",
+      "slot": "GRIP",
+      "statModifiers": { "stability": 10, "range": 3, "handling": -8 },
+      "description": "A grip housing filled with dense ballast material that lowers the weapon's center of gravity. Extremely stable but noticeably heavier.",
+      "rarity": "RARE"
+    },
+    {
+      "name": "Combat Grip",
+      "slot": "GRIP",
+      "statModifiers": { "handling": 5, "reloadSpeed": 5 },
+      "description": "A military-standard grip with integrated magazine well funnel and optimized finger grooves for rapid operation under stress.",
+      "rarity": "COMMON"
+    },
+    {
+      "name": "Red-Dot Sight",
+      "slot": "SCOPE",
+      "statModifiers": { "handling": 8, "range": 3 },
+      "description": "A minimalist holographic sight that provides fast target acquisition at close to medium range. Low profile and lightweight.",
+      "rarity": "COMMON"
+    },
+    {
+      "name": "Thermal Scope",
+      "slot": "SCOPE",
+      "statModifiers": { "range": 15, "handling": -10 },
+      "description": "An advanced thermal imaging scope that highlights heat signatures through smoke and darkness. The bulky housing significantly impacts weapon handling.",
+      "rarity": "RARE"
+    },
+    {
+      "name": "Holographic Sight",
+      "slot": "SCOPE",
+      "statModifiers": { "handling": 6, "stability": 4 },
+      "description": "A rugged holographic display that projects a reticle at infinity focus, allowing both-eyes-open shooting and improved situational awareness.",
+      "rarity": "UNCOMMON"
+    },
+    {
+      "name": "Long-Range Scope",
+      "slot": "SCOPE",
+      "statModifiers": { "range": 20, "handling": -12, "stability": -5 },
+      "description": "A high-magnification optical scope designed for extreme-range engagements. Terrible for close quarters but unmatched at distance.",
+      "rarity": "RARE"
+    },
+    {
+      "name": "Threat Detector Lens",
+      "slot": "SCOPE",
+      "statModifiers": { "range": 10, "handling": 5, "stability": 3 },
+      "description": "A smart optic that highlights hostile targets with a subtle glow and provides range-finding data. The lightweight construction barely affects weapon balance.",
+      "rarity": "LEGENDARY"
+    },
+    {
+      "name": "Iron Sights",
+      "slot": "SCOPE",
+      "statModifiers": { "handling": 10 },
+      "description": "Stripped-down factory iron sights. No magnification, no electronics, nothing to break. Pure mechanical simplicity for those who trust their eyes.",
+      "rarity": "COMMON"
+    },
+    {
+      "name": "Predictive Targeting Array",
+      "slot": "SCOPE",
+      "statModifiers": { "range": 18, "stability": 10, "handling": -8 },
+      "description": "An AI-assisted scope that calculates target trajectory and displays a predictive reticle. The processing unit adds weight but provides an undeniable accuracy advantage.",
+      "rarity": "LEGENDARY"
+    },
+    {
+      "name": "Reflex Sight",
+      "slot": "SCOPE",
+      "statModifiers": { "handling": 5, "range": 5, "stability": 2 },
+      "description": "A compact reflex optic with an illuminated dot reticle. Good all-around performance without significant trade-offs. A safe choice for any engagement range.",
+      "rarity": "UNCOMMON"
+    },
+    {
+      "name": "Fixed Stock",
+      "slot": "STOCK",
+      "statModifiers": { "stability": 10, "handling": -5 },
+      "description": "A rigid fixed stock that provides a solid cheek weld and consistent shoulder pocket. Maximum stability for those willing to sacrifice snap-aim speed.",
+      "rarity": "COMMON"
+    },
+    {
+      "name": "Composite Stock",
+      "slot": "STOCK",
+      "statModifiers": { "stability": 6, "handling": 4 },
+      "description": "A carbon-composite stock that balances weight reduction with structural rigidity. Slight improvements to both stability and handling.",
+      "rarity": "UNCOMMON"
+    },
+    {
+      "name": "Folding Stock",
+      "slot": "STOCK",
+      "statModifiers": { "handling": 12, "stability": -8 },
+      "description": "A collapsible stock that can be folded for rapid deployment and tighter maneuvering in confined spaces. Stability suffers when folded but handling soars.",
+      "rarity": "UNCOMMON"
+    },
+    {
+      "name": "Recoil-Dampening Stock",
+      "slot": "STOCK",
+      "statModifiers": { "stability": 15, "handling": -6 },
+      "description": "A hydraulic-dampened stock with an internal recoil buffer that absorbs kinetic energy. Turns bucking broncos into gentle ponies at the cost of added weight.",
+      "rarity": "RARE"
+    },
+    {
+      "name": "Short-Action Stock",
+      "slot": "STOCK",
+      "statModifiers": { "handling": 8, "reloadSpeed": 5 },
+      "description": "A compact stock with a shortened length of pull, optimized for quick transitions and fast reloads. Favored by aggressive close-quarters Runners.",
+      "rarity": "UNCOMMON"
+    },
+    {
+      "name": "Gyroscopic Stabilizer Stock",
+      "slot": "STOCK",
+      "statModifiers": { "stability": 18, "handling": 5, "reloadSpeed": -4 },
+      "description": "A stock housing an internal gyroscope that actively counters recoil forces. The spinning mechanism adds faint vibration but provides exceptional stability.",
+      "rarity": "LEGENDARY"
+    },
+    {
+      "name": "Adaptive Flex Stock",
+      "slot": "STOCK",
+      "statModifiers": { "stability": 8, "handling": 8 },
+      "description": "A shape-memory alloy stock that adjusts its rigidity based on firing mode. Stiffens during sustained fire and loosens during movement for optimal performance in all situations.",
+      "rarity": "LEGENDARY"
+    },
+    {
+      "name": "No Stock",
+      "slot": "STOCK",
+      "statModifiers": { "handling": 15, "stability": -12 },
+      "description": "Remove the stock entirely for maximum agility and hipfire performance. Recoil becomes your personal problem, but nothing handles faster.",
+      "rarity": "COMMON"
+    },
+    {
+      "name": "Flash Hider",
+      "slot": "MUZZLE",
+      "statModifiers": { "stability": 5, "range": 3 },
+      "description": "A pronged flash suppressor that reduces visible muzzle signature and slightly improves barrel harmonics. Standard tactical modification.",
+      "rarity": "COMMON"
+    },
+    {
+      "name": "Compensator",
+      "slot": "MUZZLE",
+      "statModifiers": { "stability": 12, "range": -4 },
+      "description": "A ported muzzle device that redirects propellant gases upward to counteract muzzle rise. Excellent recoil control but the venting reduces muzzle velocity.",
+      "rarity": "UNCOMMON"
+    },
+    {
+      "name": "Suppressor",
+      "slot": "MUZZLE",
+      "statModifiers": { "stability": 6, "range": -8 },
+      "description": "A baffled sound suppressor that reduces weapon report to hearing-safe levels. The added barrel length improves stability but subsonic gas cycling reduces effective range.",
+      "rarity": "RARE"
+    },
+    {
+      "name": "Muzzle Brake",
+      "slot": "MUZZLE",
+      "statModifiers": { "stability": 15, "handling": -5 },
+      "description": "An aggressive side-venting brake that virtually eliminates felt recoil. Concussive blast from the side ports will irritate anyone standing next to you.",
+      "rarity": "RARE"
+    },
+    {
+      "name": "Kinetic Amplifier",
+      "slot": "MUZZLE",
+      "statModifiers": { "range": 12, "stability": -6 },
+      "description": "A magnetic acceleration collar that boosts projectile velocity as it exits the barrel. Dramatically extends effective range but the added kick is substantial.",
+      "rarity": "UNCOMMON"
+    },
+    {
+      "name": "Phase-Shift Diffuser",
+      "slot": "MUZZLE",
+      "statModifiers": { "range": 15, "stability": 10, "handling": -8 },
+      "description": "An exotic muzzle device that partially phase-shifts the projectile as it exits, reducing air resistance and virtually eliminating bullet drop. Heavy and expensive.",
+      "rarity": "LEGENDARY"
+    },
+    {
+      "name": "Harmonic Resonator",
+      "slot": "MUZZLE",
+      "statModifiers": { "stability": 12, "range": 8, "handling": -3 },
+      "description": "A precision-tuned muzzle device that vibrates at the barrel's natural frequency, canceling harmonic distortion and improving both accuracy and effective range.",
+      "rarity": "LEGENDARY"
+    }
+  ],
+  "cores": [
+    {
+      "name": "Bulwark Core",
+      "shellId": "Titan",
+      "abilityModification": "Aegis Wall now reflects a portion of absorbed damage back toward attackers. Reflected damage scales with the wall's remaining health.",
+      "statModifiers": { "shield": 15, "resilience": 10, "speed": -5 },
+      "rarity": "LEGENDARY"
+    },
+    {
+      "name": "Tremor Core",
+      "shellId": "Titan",
+      "abilityModification": "Seismic Slam's shockwave radius is doubled and leaves behind fractured terrain that slows enemies for 4 seconds. Ground slam damage increased by 25%.",
+      "statModifiers": { "health": 10, "resilience": 8 },
+      "rarity": "RARE"
+    },
+    {
+      "name": "Vanguard Core",
+      "shellId": "Titan",
+      "abilityModification": "Aegis Wall now moves slowly forward after deployment, pushing enemies back. Wall health is reduced by 30% but the Titan gains damage resistance while behind it.",
+      "statModifiers": { "health": 8, "speed": 5, "shield": -5 },
+      "rarity": "RARE"
+    },
+    {
+      "name": "Specter Core",
+      "shellId": "Wraith",
+      "abilityModification": "Shadow Dash duration extended to 6 seconds. Exiting the phase while behind an enemy triggers an automatic backstab dealing massive bonus damage.",
+      "statModifiers": { "speed": 12, "handling": 8, "health": -8 },
+      "rarity": "LEGENDARY"
+    },
+    {
+      "name": "Laceration Core",
+      "shellId": "Wraith",
+      "abilityModification": "Venom Blades now apply a bleed effect that deals damage over 5 seconds. Killing a bleeding target causes the blades to seek the nearest enemy.",
+      "statModifiers": { "speed": 8, "recovery": 5, "shield": -5 },
+      "rarity": "RARE"
+    },
+    {
+      "name": "Phase-Weaver Core",
+      "shellId": "Wraith",
+      "abilityModification": "Shadow Dash can be activated twice before triggering cooldown. Each dash is shorter (2 seconds) but the second dash deals arc damage to nearby enemies on exit.",
+      "statModifiers": { "speed": 10, "shield": 5, "resilience": -8 },
+      "rarity": "LEGENDARY"
+    },
+    {
+      "name": "Triage Core",
+      "shellId": "Nomad",
+      "abilityModification": "Mending Pulse now also restores a portion of allies' shields and increases their recovery stat for 8 seconds after healing. Healing amount increased by 20%.",
+      "statModifiers": { "recovery": 15, "health": 5, "speed": -3 },
+      "rarity": "LEGENDARY"
+    },
+    {
+      "name": "Quartermaster Core",
+      "shellId": "Nomad",
+      "abilityModification": "Supply Cache now also drops a small shield cell along with ammunition. Cache duration increased to 30 seconds and can serve 5 full reloads.",
+      "statModifiers": { "resilience": 8, "recovery": 6 },
+      "rarity": "RARE"
+    },
+    {
+      "name": "Field Medic Core",
+      "shellId": "Nomad",
+      "abilityModification": "Mending Pulse cooldown reduced by 5 seconds. Allies healed by the pulse gain 10% damage resistance for 4 seconds. Killing enemies while Mending Pulse is active extends its duration.",
+      "statModifiers": { "recovery": 10, "shield": 5, "speed": -4 },
+      "rarity": "RARE"
+    },
+    {
+      "name": "Panopticon Core",
+      "shellId": "Phantom",
+      "abilityModification": "Spectral Scan now persists for 10 seconds and reveals enemy equipment and deployables. Marked enemies take 10% increased damage from all sources instead of 5%.",
+      "statModifiers": { "speed": 10, "recovery": 5, "health": -5 },
+      "rarity": "LEGENDARY"
+    },
+    {
+      "name": "Ghost Protocol Core",
+      "shellId": "Phantom",
+      "abilityModification": "Shroud Grenade now makes the Phantom fully invisible for 3 seconds when thrown while inside the smoke cloud. Smoke duration extended to 12 seconds.",
+      "statModifiers": { "speed": 8, "handling": 6, "shield": -5 },
+      "rarity": "RARE"
+    },
+    {
+      "name": "Sentinel Core",
+      "shellId": "Bastion",
+      "abilityModification": "Fortress Protocol over-shield now persists indefinitely but decays when taking damage. While the over-shield is active, the Bastion's melee attacks stagger enemies.",
+      "statModifiers": { "shield": 18, "resilience": 10, "speed": -8 },
+      "rarity": "LEGENDARY"
+    },
+    {
+      "name": "Citadel Core",
+      "shellId": "Bastion",
+      "abilityModification": "Rampart Barricade is now twice as wide and grants allies behind it increased reload speed. Barricade health increased by 50% but cooldown increased by 5 seconds.",
+      "statModifiers": { "shield": 12, "health": 8, "handling": -5 },
+      "rarity": "RARE"
+    },
+    {
+      "name": "Ironclad Core",
+      "shellId": "Bastion",
+      "abilityModification": "Fortress Protocol now absorbs incoming damage and converts 15% of it into energy that reduces ability cooldowns. Over-shield capacity increased by 25%.",
+      "statModifiers": { "shield": 15, "resilience": 12, "speed": -10 },
+      "rarity": "LEGENDARY"
+    },
+    {
+      "name": "Tempest Core",
+      "shellId": "Striker",
+      "abilityModification": "Arc Overload range increased to 18 meters and now chains lightning to up to 6 targets. Each chain deals 60% of the original damage. Shield recovery penalty reduced to 3 seconds.",
+      "statModifiers": { "recovery": 8, "speed": 6, "shield": -5 },
+      "rarity": "LEGENDARY"
+    },
+    {
+      "name": "Breacher Core",
+      "shellId": "Striker",
+      "abilityModification": "Concussion Charge now sticks to surfaces and can be remotely detonated. Blind duration increased to 4 seconds and affected enemies are also slowed by 30%.",
+      "statModifiers": { "handling": 8, "resilience": 5, "recovery": -4 },
+      "rarity": "RARE"
+    },
+    {
+      "name": "Overdrive Core",
+      "shellId": "Striker",
+      "abilityModification": "Arc Overload can now be charged by dealing weapon damage. Every 500 damage dealt reduces Arc Overload cooldown by 5 seconds. Fully charged Arc Overload deals 40% more damage.",
+      "statModifiers": { "speed": 8, "handling": 5, "shield": -8 },
+      "rarity": "RARE"
+    },
+    {
+      "name": "Pathfinder Core",
+      "shellId": "Conduit",
+      "abilityModification": "Tether Line cooldown reduced to 12 seconds. Grappling to an enemy deals impact damage and briefly stuns them. Grapple range extended to 40 meters.",
+      "statModifiers": { "speed": 10, "handling": 5, "resilience": -5 },
+      "rarity": "RARE"
+    },
+    {
+      "name": "Technomancer Core",
+      "shellId": "Conduit",
+      "abilityModification": "Disruption Pulse radius increased to 15 meters. Disabled enemy equipment is hacked and temporarily fights for your team for 6 seconds before being destroyed.",
+      "statModifiers": { "recovery": 8, "shield": 6, "speed": -3 },
+      "rarity": "LEGENDARY"
+    },
+    {
+      "name": "Momentum Core",
+      "shellId": "Conduit",
+      "abilityModification": "Using Tether Line grants a 5-second buff that increases weapon handling and reload speed by 20%. Chaining multiple grapples within the buff window extends its duration.",
+      "statModifiers": { "speed": 8, "handling": 8, "health": -5 },
+      "rarity": "RARE"
+    }
+  ],
+  "implants": [
+    {
+      "name": "Neural Uplink Array",
+      "slot": "HEAD",
+      "statBonuses": { "handling": 8, "stability": 5 },
+      "rarity": "UNCOMMON",
+      "description": "A cortical implant that improves weapon control by feeding aim-assist data directly into the Runner's motor cortex. Minor latency spikes reported during solar flare activity."
+    },
+    {
+      "name": "Threat Assessment Matrix",
+      "slot": "HEAD",
+      "statBonuses": { "handling": 12, "speed": 5 },
+      "rarity": "RARE",
+      "description": "An AI co-processor that highlights threats and calculates optimal engagement vectors in real-time. The whispered tactical suggestions take some getting used to."
+    },
+    {
+      "name": "Sensory Dampener",
+      "slot": "HEAD",
+      "statBonuses": { "resilience": 6, "stability": 4 },
+      "rarity": "COMMON",
+      "description": "Filters out disorienting sensory input from flashbangs, concussive blasts, and other environmental hazards. Makes the world slightly muted but significantly more survivable."
+    },
+    {
+      "name": "Precognitive Lobe",
+      "slot": "HEAD",
+      "statBonuses": { "handling": 20, "speed": 10, "resilience": -8 },
+      "rarity": "EXOTIC",
+      "description": "An experimental temporal implant that provides 200-millisecond future-sight. The Runner perceives attacks fractionally before they occur. Extended use causes nosebleeds and existential dread."
+    },
+    {
+      "name": "Cognitive Accelerator",
+      "slot": "HEAD",
+      "statBonuses": { "handling": 15, "reloadSpeed": 10 },
+      "rarity": "LEGENDARY",
+      "description": "A military-grade processing implant that accelerates all cognitive functions. Weapon handling and manual dexterity improve dramatically. Users report the world feeling slower."
+    },
+    {
+      "name": "Situational Awareness Chip",
+      "slot": "HEAD",
+      "statBonuses": { "heatCapacity": 5, "handling": 4 },
+      "rarity": "COMMON",
+      "description": "A basic awareness enhancement chip that improves peripheral threat detection. Nothing revolutionary, but it's kept more Runners alive than most legendary gear."
+    },
+    {
+      "name": "Reactive Plating Vest",
+      "slot": "CHEST",
+      "statBonuses": { "health": 10, "resilience": 8 },
+      "rarity": "UNCOMMON",
+      "description": "Layered reactive armor plates that detonate outward when struck by high-velocity projectiles, dissipating kinetic energy before it reaches the wearer. Replacement plates are expensive."
+    },
+    {
+      "name": "Nano-Fiber Weave",
+      "slot": "CHEST",
+      "statBonuses": { "health": 5, "recovery": 4 },
+      "rarity": "COMMON",
+      "description": "A mesh of self-repairing nano-fibers woven into the shell's chest cavity. Provides modest damage absorption and slowly repairs minor structural damage between engagements."
+    },
+    {
+      "name": "Void Reactor Core",
+      "slot": "CHEST",
+      "statBonuses": { "shield": 22, "recovery": 12, "speed": -10 },
+      "rarity": "EXOTIC",
+      "description": "A miniaturized void energy reactor implanted in the chest cavity. Generates enormous shield energy and recovery rates but the reactor mass significantly reduces mobility. Occasional void-energy leaks cause nearby electronics to malfunction."
+    },
+    {
+      "name": "Ablative Shell Layer",
+      "slot": "CHEST",
+      "statBonuses": { "resilience": 14, "health": 10 },
+      "rarity": "RARE",
+      "description": "Sacrificial armor layers that ablate under fire, protecting vital systems. Each layer can absorb a significant amount of damage before being depleted and requiring time to regenerate."
+    },
+    {
+      "name": "Vitality Engine",
+      "slot": "CHEST",
+      "statBonuses": { "health": 20, "recovery": 15 },
+      "rarity": "LEGENDARY",
+      "description": "An advanced bio-mechanical heart replacement that dramatically increases the Runner's damage tolerance and regenerative capacity. The rhythmic hum it produces unsettles teammates."
+    },
+    {
+      "name": "Kinetic Absorber Plate",
+      "slot": "CHEST",
+      "statBonuses": { "resilience": 5, "shield": 3 },
+      "rarity": "COMMON",
+      "description": "A simple layered composite plate that distributes impact force across a wider area. Basic protection that every Runner should have as a minimum baseline."
+    },
+    {
+      "name": "Auto-Loader Gauntlets",
+      "slot": "ARMS",
+      "statBonuses": { "reloadSpeed": 10, "handling": 5 },
+      "rarity": "UNCOMMON",
+      "description": "Mechanical gauntlets with integrated magazine-assist servos that speed up the reload process. The servos occasionally whirr unprompted, which can be unsettling in quiet zones."
+    },
+    {
+      "name": "Marksman Bracers",
+      "slot": "ARMS",
+      "statBonuses": { "stability": 8, "handling": 4 },
+      "rarity": "UNCOMMON",
+      "description": "Forearm braces with gyroscopic stabilizers that reduce weapon sway. Originally designed for zero-gravity combat, equally effective planetside for steadying long-range shots."
+    },
+    {
+      "name": "Hyper-Kinetic Servos",
+      "slot": "ARMS",
+      "statBonuses": { "reloadSpeed": 18, "handling": 12, "stability": -8 },
+      "rarity": "EXOTIC",
+      "description": "Military prototype arm servos that operate at three times normal speed. Weapon manipulation becomes almost inhumanly fast, but the aggressive motor actuation introduces vibration that hurts stability."
+    },
+    {
+      "name": "Scavenger Arms",
+      "slot": "ARMS",
+      "statBonuses": { "lootSpeed": 12, "reloadSpeed": 6 },
+      "rarity": "RARE",
+      "description": "Arms fitted with multi-tool manipulators designed for rapid field salvage. Extraction becomes faster, and the dexterous fingers also improve reload technique."
+    },
+    {
+      "name": "Titan Grip Enhancers",
+      "slot": "ARMS",
+      "statBonuses": { "stability": 15, "reloadSpeed": 8 },
+      "rarity": "LEGENDARY",
+      "description": "Grip-enhancement implants that fuse weapon to wielder during combat, creating a locked firing platform. Recoil is transferred directly into the shell's frame rather than the arms. Even heavy weapons feel light."
+    },
+    {
+      "name": "Salvage Manipulators",
+      "slot": "ARMS",
+      "statBonuses": { "lootSpeed": 6, "handling": 3 },
+      "rarity": "COMMON",
+      "description": "Basic manipulator upgrades that speed up item interaction and looting. Nothing fancy, but in extraction zones every second spent looting is a second you're vulnerable."
+    },
+    {
+      "name": "Sprint Actuators",
+      "slot": "LEGS",
+      "statBonuses": { "speed": 10, "resilience": -3 },
+      "rarity": "UNCOMMON",
+      "description": "Leg actuators optimized for maximum sprint velocity. The lightweight construction sacrifices some structural integrity but lets you outrun almost anything in the zone."
+    },
+    {
+      "name": "Shock Absorber Struts",
+      "slot": "LEGS",
+      "statBonuses": { "resilience": 7, "speed": 4 },
+      "rarity": "UNCOMMON",
+      "description": "Hydraulic strut implants that absorb landing impact and ground-based shockwaves. Better damage resistance from environmental hazards and slightly improved traversal speed."
+    },
+    {
+      "name": "Gravity Negation Boots",
+      "slot": "LEGS",
+      "statBonuses": { "speed": 25, "handling": 8, "resilience": -12 },
+      "rarity": "EXOTIC",
+      "description": "Boots containing localized gravity manipulation fields that reduce the wearer's effective mass by 40%. Movement becomes eerily fast and floaty. The fragile gravity generators are vulnerable to impact damage."
+    },
+    {
+      "name": "Reinforced Leg Plating",
+      "slot": "LEGS",
+      "statBonuses": { "resilience": 5, "health": 3 },
+      "rarity": "COMMON",
+      "description": "Additional armor plating bolted onto the shell's lower extremities. Protects against environmental hazards and low-angle fragmentation. Heavy but dependable."
+    },
+    {
+      "name": "Adaptive Locomotion Suite",
+      "slot": "LEGS",
+      "statBonuses": { "speed": 15, "resilience": 10 },
+      "rarity": "LEGENDARY",
+      "description": "A comprehensive leg overhaul featuring adaptive terrain-reading sensors and variable-geometry stride mechanics. The system automatically adjusts gait for optimal speed and stability on any surface."
+    },
+    {
+      "name": "Quick-Step Pistons",
+      "slot": "LEGS",
+      "statBonuses": { "speed": 8, "lootSpeed": 5 },
+      "rarity": "RARE",
+      "description": "High-frequency leg pistons that accelerate both movement and crouch-to-stand transitions. Extraction speed improves noticeably, and sliding into cover becomes second nature."
+    },
+    {
+      "name": "Runner's Sigil",
+      "slot": "CLASS_ITEM",
+      "statBonuses": { "recovery": 6, "speed": 4 },
+      "rarity": "UNCOMMON",
+      "description": "A worn insignia that marks the wearer as a veteran of the extraction zones. The embedded micro-circuitry provides modest stat enhancements and serves as a transponder for allied fireteams."
+    },
+    {
+      "name": "Extraction Badge",
+      "slot": "CLASS_ITEM",
+      "statBonuses": { "lootSpeed": 5, "heatCapacity": 3 },
+      "rarity": "COMMON",
+      "description": "A simple badge awarded to Runners who complete their first successful extraction. The embedded chip provides minor quality-of-life improvements to zone navigation and loot interaction."
+    },
+    {
+      "name": "Chrono-Shard Pendant",
+      "slot": "CLASS_ITEM",
+      "statBonuses": { "recovery": 20, "heatCapacity": 15, "health": -10 },
+      "rarity": "EXOTIC",
+      "description": "A crystalline shard suspended in a null-time field, worn as a pendant. It bends local time around the wearer, dramatically accelerating recovery processes. The temporal distortion weakens the Runner's physical integrity over extended use."
+    },
+    {
+      "name": "Hollow Point Talisman",
+      "slot": "CLASS_ITEM",
+      "statBonuses": { "handling": 10, "stability": 8 },
+      "rarity": "RARE",
+      "description": "A spent hollow-point round from the first Runner to ever successfully extract, encased in resin and worn as a luck charm. Whether the stat improvements come from the embedded micro-tech or actual luck is debated."
+    },
+    {
+      "name": "Vanguard's Oath",
+      "slot": "CLASS_ITEM",
+      "statBonuses": { "health": 18, "resilience": 12 },
+      "rarity": "LEGENDARY",
+      "description": "An ornate class item inscribed with the names of every Runner who fell during the first contact at Tau Ceti. Its weight is a constant reminder of what's at stake. The integrated systems provide substantial defensive bonuses."
+    },
+    {
+      "name": "Zone Tracker Beacon",
+      "slot": "CLASS_ITEM",
+      "statBonuses": { "lootSpeed": 8, "speed": 5 },
+      "rarity": "RARE",
+      "description": "A multi-frequency beacon that pings extraction points and high-value loot caches. The navigation data overlay speeds up route planning and the integrated stim-pack dispenser provides a minor speed boost."
+    }
+  ]
+}
