@@ -96,4 +96,21 @@ export interface FilterState {
   modSlot: ModSlot | "ALL";
   implantSlot: ImplantSlot | "ALL";
   search: string;
+  page: number;
+  pageSize: number;
 }
+
+export interface PaginatedResponse<T> {
+  items: T[];
+  total: number;
+  page: number;
+  pageSize: number;
+  totalPages: number;
+}
+
+export type AnalyticsEvent =
+  | { type: "search_performed"; query: string; filters: Partial<FilterState>; resultCount: number; latencyMs: number }
+  | { type: "item_viewed"; itemType: GearCategory; itemId: string; source: "search" | "list" | "direct" }
+  | { type: "build_created"; shellId: string; slotsFilledCount: number }
+  | { type: "build_saved"; storage: "localStorage" | "db" }
+  | { type: "comparison_viewed"; entityType: GearCategory | "build"; leftId: string; rightId: string };
