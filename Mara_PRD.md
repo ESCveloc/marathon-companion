@@ -1,0 +1,233 @@
+# PRODUCT REQUIREMENTS DOCUMENT
+## Marathon Companion App
+### Gear Optimization & Player Intelligence Platform
+
+| | |
+|---|---|
+| **Author** | Ian Karssen |
+| **Date** | March 1, 2026 |
+| **Version** | 1.0 — Initial Draft |
+| **Status** | Draft — For Review |
+| **Game Launch** | March 5, 2026 |
+|
+---
+
+## 1. Problem Statement
+
+Marathon, Bungie's extraction shooter launching March 5, 2026, features 7 Runner Shell classes, Cores that modify abilities, Implants that boost stats, and over 400 weapon mods. Players who want to [...]  
+
+The Destiny 2 ecosystem proves the demand: DIM has millions of active users, D2ArmorPicker is the most-visited Destiny optimization tool, and Light.gg serves 35M+ users with weapon data. No equivalent [...]  
+
+---
+
+## 2. Target Users
+
+| Persona | Description | Primary Need |
+|---------|-------------|--------------|
+| **The Min-Maxer** | Hardcore players who optimize every stat point. Plays daily, runs high-difficulty zones, and wants mathematically optimal builds. | Auto-optimizer |
+| **The Casual Explorer** | Plays a few sessions per week. Wants to know what gear is good without spending hours researching. Needs clear recommendations. | Gear database & guides |
+| **The Squad Leader** | Organizes a regular team. Needs to coordinate builds across 3 players to cover roles and maximize team synergy. | Team build planner |
+| **The Completionist** | Tracks every objective, event, and seasonal milestone. Wants to maximize XP and never miss a weekly reset. | XP/event tracker |
+
+---
+
+## 3. Goals
+
+- **G1:** Become the go-to gear optimization tool for Marathon within the first 30 days of game launch.
+- **G2:** Provide a complete, searchable database of all Marathon gear, weapons, mods, Cores, and Implants available within 48 hours of game launch.
+- **G3:** Deliver a build auto-optimizer that finds mathematically optimal loadouts from a player's inventory within 60 days of launch.
+- **G4:** Ship a weekly objective and XP tracker that drives daily return visits within 60 days of launch.
+- **G5:** Achieve 50,000 monthly active users within 90 days of game launch.
+
+---
+
+## 4. Non-Goals
+
+| Non-Goal | Rationale |
+|----------|-----------|
+| LFG / matchmaking (Phase 1–2) | Social features are Phase 5. Gear optimization is the core differentiator and must ship first. |
+| In-game overlay | Requires platform-specific integrations that slow time-to-market. Web-first approach is faster. |
+| Lore / story wiki | Content sites like MarathonDB will cover lore. Our focus is actionable gameplay tools. |
+| Streaming / content creator tools | Niche audience. May revisit post-launch if demand is clear. |
+| Mobile app (Phase 1–2) | Web app first for speed. Mobile is Phase 4 after the core product is validated. |
+
+---
+
+## 5. User Stories
+
+### 5.1 The Min-Maxer
+
+- As a min-maxer, I want to see every possible stat combination for my Runner Shell so that I can identify the mathematically optimal build.
+- As a min-maxer, I want to set target stat thresholds and have the app find the best gear combination from my inventory so that I don't waste hours testing manually.
+- As a min-maxer, I want to compare two loadouts side-by-side so that I can see exact stat trade-offs before committing resources.
+- As a min-maxer, I want to save multiple loadout presets per Runner Shell so that I can quickly swap between builds for different zones.
+
+### 5.2 The Casual Explorer
+
+- As a casual player, I want to search for any weapon or mod and see its stats, perks, and community rating so that I know what's worth keeping.
+- As a casual player, I want to see recommended builds for each Runner Shell so that I have a solid starting point without deep theorycrafting.
+- As a casual player, I want the app to highlight which of my items are high-value so that I know what to prioritize extracting.
+
+### 5.3 The Completionist
+
+- As a completionist, I want a weekly checklist of all objectives, milestones, and reset activities so that I never miss time-limited rewards.
+- As a completionist, I want to see my XP progress toward the next season rank and estimated time to completion so that I can plan my sessions.
+- As a completionist, I want notifications when limited-time events start so that I can maximize participation.
+- As a completionist, I want a resource tracker that shows the optimal way to spend my currencies so that I don't waste them.
+
+---
+
+## 6. Requirements by Phase
+
+### Phase 1 — Launch Week: Web App + Static Database
+**Target: March 5, 2026 (game launch day)**
+
+| Priority | Requirement | Acceptance Criteria | Status |
+|----------|-------------|-------------------|--------|
+| P0 | Complete gear database: all weapons, mods, Cores, Implants, Runner Shells with stats | 100% of known items indexed within 48hrs of launch | Not started |
+| P0 | Search and filter across all items by name, type, stat, Shell class | P95 server response <200ms on seeded dataset (≥5,000 items) with multi-filter + pagination; end-to-end UI updates feel instant [...] | Not started |
+| P0 | Build planner: select Shell, slot Cores/Implants, view resulting stat totals | Stat totals update in real-time; all 7 Shells supported | Not started |
+| P0 | Side-by-side comparison mode for any two items or loadouts | Differences highlighted with color coding (green/red deltas) | Not started |
+| P1 | Ability descriptions and cooldown data for all Shells, Primes, and Tacticals | All 7 Shell abilities documented with accurate numbers | Not started |
+| P1 | Mobile-responsive web design | Usable on 375px–428px screens without horizontal scroll | Not started |
+
+### Phase 2 — Weeks 2–4: Live API + Optimizer + Tracker
+**Target: March 19 – April 2, 2026**
+
+| Priority | Requirement | Acceptance Criteria | Status |
+|----------|-------------|-------------------|--------|
+| P0 | OAuth integration with Bungie API for authenticated inventory access | Users can link account and pull live inventory within 5 seconds | Not started |
+| P0 | Auto-optimizer: user sets target stats; app searches optimal gear combinations from owned inventory using pruning/heuristics (brute-force only when the search space is small) | Returns top 5 optimal [...] | Not started |
+| P0 | Saved loadout presets (multiple per Shell) | Min 10 saved loadouts per account; persist across sessions | Not started |
+| P0 | Weekly objectives checklist pulled from API | Auto-refreshes on weekly reset; shows completion status | Not started |
+| P0 | XP progress tracker with season rank and estimated time to next rank | XP values accurate within 1 match of real-time; shows progress bar | Not started |
+| P0 | Event/seasonal activity tracker with countdown timers | Displays all active and upcoming events with start/end times | Not started |
+| P1 | Resource/currency tracker with optimal spending recommendations | Shows all currencies with balances; suggests best use | Not started |
+| P1 | Faction reputation tracker with progress toward next rank | Accurate faction standings synced from API | Not started |
+| P2 | Push notifications for weekly resets and event starts | Notifications delivered within 5 min of event; user-configurable | Not started |
+
+### Phase 3 — Month 2: Discord Bot
+**Target: April – May 2026**
+
+| Priority | Requirement | Acceptance Criteria | Status |
+|----------|-------------|-------------------|--------|
+| P0 | Discord bot: item/weapon lookup commands (/weapon, /mod, /implant) | Returns formatted embed with stats in <2 seconds | Not started |
+| P0 | Discord bot: weekly status command (/weekly) showing incomplete objectives | Pulls user's progress via linked account; formatted checklist | Not started |
+| P1 | Discord bot: build sharing (/build show) with inline stat summary | Generates embed with Shell, gear, and stat totals | Not started |
+| P1 | Discord bot: inline optimizer (/optimize Shell TargetStat:value) | Returns top loadout suggestion in <5 seconds | Not started |
+
+### Phase 4 — Month 3+: Mobile App
+**Target: June 2026+**
+
+| Priority | Requirement | Acceptance Criteria | Status |
+|----------|-------------|-------------------|--------|
+| P0 | Native iOS and Android app with full feature parity to web | All Phase 1–2 features available on mobile | Not started |
+| P1 | Gear transfer between characters via API (if supported) | Transfer completes in <3 seconds; error handling for locked items | Not started |
+| P2 | AI build advisor: recommends loadouts based on zone, playstyle, and team comp | Suggestions update dynamically; explains reasoning | Not started |
+
+### Phase 5 — Ongoing: Social + AI
+
+| Priority | Requirement | Acceptance Criteria | Status |
+|----------|-------------|-------------------|--------|
+| P1 | Build sharing: save and publish builds with descriptions and tags | Shareable via URL; includes full stat breakdown | Not started |
+| P1 | Community build ratings and meta voting | Upvote/downvote; sort by rating, date, Shell class | Not started |
+| P2 | User profiles with extraction stats, favorite builds, and achievement badges | Profile page loads in <2 seconds; privacy controls available | Not started |
+| P2 | AI advisor: adaptive build suggestions based on match history and meta trends | Recommendations improve with usage; cites reasoning | Not started |
+
+---
+
+## 7. Success Metrics
+
+### Leading Indicators (change within days)
+
+| Metric | Target | Timeframe |
+|--------|--------|-----------|
+| Daily active users (DAU) | 5,000 within first week of launch | Week 1 |
+| Gear database completeness | 100% of known items indexed | 48 hours post-launch |
+| Build planner sessions per user | >3 builds created per session | Week 1 |
+| Search queries per day | >10,000 daily searches | Week 2 |
+
+### Lagging Indicators (change over weeks/months)
+
+| Metric | Target | Timeframe |
+|--------|--------|-----------|
+| Monthly active users (MAU) | 50,000 | 90 days |
+| Weekly retention (users returning on weekly reset) | >40% | 60 days |
+| OAuth-linked accounts (Phase 2) | 30% of MAU | 30 days post-Phase 2 |
+| Discord bot servers installed | 500 servers | 30 days post-Phase 3 |
+| App store rating (Phase 4) | 4.5+ stars | 30 days post-Phase 4 |
+
+### 7.1 Analytics & Instrumentation
+
+To make Success Metrics measurable, instrument the following events (Phase 1 web app):
+
+- `search_performed` (query, filters, result_count, latency_ms)
+- `item_viewed` (item_type, item_id, source: search/list/direct)
+- `build_created` (shell_id, slots_filled_count)
+- `build_saved` (storage: localStorage/DB)
+- `comparison_viewed` (entity_type, left_id, right_id)
+- `optimize_requested` (targets, constraints, inventory_size) [Phase 2]
+- `oauth_linked` (provider, success/failure) [Phase 2]
+
+---
+
+## 8. Technical Architecture Overview
+
+### Stack Recommendation
+
+| Layer | Technology |
+|-------|-----------|
+| Frontend (Web) | React/Next.js — fast iteration, SSR for SEO, large ecosystem |
+| Frontend (Mobile) | React Native or Flutter — code sharing with web; decision deferred to Phase 4 |
+| Backend API | Next.js Route Handlers (Phase 1) — serves app APIs. Optionally split to Node.js/Express or Python/FastAPI in Phase 2+ if Bungie API proxying and optimizer workloads require it. |
+| Database | PostgreSQL for structured gear data. Defer Redis entirely; use HTTP/CDN caching, request coalescing, and backoff when Bungie API is introduced. |
+| Optimizer Engine | Server-side combinatorial solver (pruning/heuristics/branch-and-bound). Brute-force only as a fallback for small search spaces. |
+| Auth | Bungie OAuth 2.0 for inventory access; own JWT for session management |
+| Discord Bot | discord.js hosted on same backend infrastructure |
+| Hosting | Vercel (frontend) + Railway/Fly.io (backend) for fast deploys |
+
+### Key Dependencies
+
+- **Bungie Marathon API:** Not yet publicly documented. Phase 1 uses data-mined/community-sourced data. Phase 2 is blocked until API endpoints are available.
+- **OAuth Support:** Required for inventory access. Must follow Bungie's API registration process and terms of service.
+- **Rate Limiting:** Bungie enforces API rate limits (historically 25 req/sec for Destiny 2). Implement intelligent caching via HTTP cache headers/CDN, request coalescing, and backoff. Redis is explicit [...]  
+
+---
+
+## 9. Competitive Landscape
+
+Several tools are already positioning for Marathon's launch. Understanding where they focus helps define our differentiation.
+
+| Competitor | Focus | Strength | Gap We Fill |
+|------------|-------|----------|-------------|
+| **MarathonDB** | Static item database and wiki | Early mover; comprehensive data | No optimizer or live inventory |
+| **MetaForge** | Build planning tool | Clean UI; theorycrafting focus | No live API; no weekly tracker |
+| **Marathon-Guide.com** | General resource hub | Guides and zone intel | No personal tools |
+| **Bungie Companion (TBD)** | Official app (if built) | First-party data access | Historically basic; no optimizer |
+
+**Our differentiator:** the auto-optimizer backed by live inventory data, combined with weekly/XP/event tracking in a single app. No competitor offers both.
+
+---
+
+## 10. Open Questions
+
+| Question | Owner | Needed By |
+|----------|-------|-----------|
+| Will Bungie publish a Marathon API at launch, or will it be delayed? | Engineering / Bungie Dev Relations | Before Phase 2 |
+| What are the Marathon API rate limits and terms of service? | Engineering | Before Phase 2 |
+| Does Marathon support gear transfer via API (like Destiny 2)? | Engineering / Bungie | Before Phase 4 |
+| What is the monetization model? Ads, premium tier, or free? | Product / Business | Before Phase 2 |
+| What AI model/service for the build advisor? Cost implications? | Engineering | Before Phase 4 |
+| Legal review of Bungie's intellectual property usage in app (item images, names)? | Legal | Before launch |
+
+---
+
+## 11. Timeline Summary
+
+| Phase | Target Date | Key Deliverables |
+|-------|-------------|------------------|
+| Phase 1 | March 5, 2026 | Web app, gear database, build planner, comparison tool |
+| Phase 2 | March 19 – April 2, 2026 | API integration, auto-optimizer, XP/event/weekly tracker |
+| Phase 3 | April – May 2026 | Discord bot with lookups, weekly status, build sharing |
+| Phase 4 | June 2026+ | Native mobile app (iOS/Android), gear transfer, AI advisor |
+| Phase 5 | Ongoing | Build sharing, community features, advanced AI |
