@@ -5,6 +5,7 @@ export type ModSlot = "BARREL" | "MAGAZINE" | "GRIP" | "SCOPE" | "STOCK" | "MUZZ
 export type ImplantSlot = "HEAD" | "CHEST" | "ARMS" | "LEGS" | "CLASS_ITEM";
 
 export interface BaseStats {
+  [key: string]: number;
   health: number;
   shield: number;
   speed: number;
