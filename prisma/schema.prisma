@@ -8,48 +8,49 @@ datasource db {
 }
 
 enum Role {
-  TANK
-  DPS
+  ASSAULT
+  STEALTH
+  INTEL
+  MOBILITY
   SUPPORT
-  RECON
-  UTILITY
+  LOOT
+  SCAVENGER
 }
 
 enum Rarity {
-  COMMON
-  UNCOMMON
-  RARE
-  LEGENDARY
-  EXOTIC
+  STANDARD
+  ENHANCED
+  DELUXE
+  SUPERIOR
+  PRESTIGE
 }
 
 enum WeaponType {
   ASSAULT_RIFLE
   SMG
-  SNIPER
+  PRECISION_RIFLE
   SHOTGUN
-  SIDEARM
-  LMG
-  ROCKET_LAUNCHER
-  GRENADE_LAUNCHER
-  FUSION_RIFLE
+  PISTOL
+  MACHINE_GUN
+  SNIPER_RIFLE
+  RAILGUN
+  MELEE
 }
 
 enum ModSlot {
+  OPTIC
   BARREL
   MAGAZINE
   GRIP
-  SCOPE
-  STOCK
-  MUZZLE
+  CHIP
+  SHIELD
 }
 
 enum ImplantSlot {
   HEAD
-  CHEST
-  ARMS
+  TORSO
   LEGS
-  CLASS_ITEM
+  SHIELD
 }
 
 model Shell {
@@ -63,6 +64,10 @@ model Shell {
   tactAbilityName  String
   tactAbilityDesc  String
   tactCooldown     Int
+  trait1Name       String   @default("")
+  trait1Desc       String   @default("")
+  trait2Name       String   @default("")
+  trait2Desc       String   @default("")
   baseStats        Json     // { health, shield, speed, resilience, recovery }
   iconUrl          String   @default("")
   cores            Core[]
@@ -75,12 +80,16 @@ model Weapon {
   name        String     @unique
   type        WeaponType
   rarity      Rarity
-  baseDamage  Int
-  fireRate    Int
+  firepower   Float
+  rateOfFire  Int
   range       Int
-  stability   Int
-  handling    Int
-  reloadSpeed Int
+  accuracy    Float
+  magazine    Int
+  reloadSpeed Float
+  recoil      Float
+  precision   Float
+  fireMode    String     @default("")
+  ammoType    String     @default("")
   description String
   iconUrl     String     @default("")
   mods        WeaponMod[] @relation("WeaponToMods")
@@ -92,7 +101,7 @@ model WeaponMod {
   id            String   @id @default(cuid())
   name          String   @unique
   slot          ModSlot
-  statModifiers Json     // { range: +10, stability: -5, etc. }
+  statModifiers Json     // { range: +10, recoil: -5, etc. }
   description   String
   rarity        Rarity
   weapons       Weapon[] @relation("WeaponToMods")
@@ -119,6 +128,7 @@ model Implant {
   statBonuses Json        // { heatCapacity: +15, lootSpeed: +8, etc. }
   rarity      Rarity
   description String
+  perk        String      @default("")
   builds      Build[]     @relation("BuildImplants")
   createdAt   DateTime    @default(now())
 }

@@ -19,7 +19,7 @@ const shells: Shell[] = gearData.shells.map((s) => ({ ...s, id: slugify(s.name) 
 const cores: Core[] = gearData.cores.map((c) => ({ ...c, id: slugify(c.name) })) as unknown as Core[];
 const implants: Implant[] = gearData.implants.map((i) => ({ ...i, id: slugify(i.name) })) as unknown as Implant[];
 
-const IMPLANT_SLOTS: ImplantSlot[] = ["HEAD", "CHEST", "ARMS", "LEGS", "CLASS_ITEM"];
+const IMPLANT_SLOTS: ImplantSlot[] = ["HEAD", "TORSO", "LEGS", "SHIELD"];
 
 function generateId(): string {
   return `build-${Date.now()}-${Math.random().toString(36).substring(2, 9)}`;
@@ -37,10 +37,9 @@ export default function BuildPlannerPage() {
   const [selectedCoreId, setSelectedCoreId] = useState<string>("");
   const [selectedImplants, setSelectedImplants] = useState<Record<ImplantSlot, string>>({
     HEAD: "",
-    CHEST: "",
-    ARMS: "",
+    TORSO: "",
     LEGS: "",
-    CLASS_ITEM: "",
+    SHIELD: "",
   });
 
   // Derived data
@@ -52,7 +51,7 @@ export default function BuildPlannerPage() {
   const availableCores = useMemo(() => {
     if (!selectedShell) return [];
     return cores.filter(
-      (c) => c.shellId === selectedShell.name || c.shellId === selectedShell.id
+      (c) => c.shellId === selectedShell.name || c.shellId === selectedShell.id || c.shellId === "Shared"
     );
   }, [selectedShell]);
 
@@ -64,10 +63,9 @@ export default function BuildPlannerPage() {
   const implantsBySlot = useMemo(() => {
     const bySlot: Record<ImplantSlot, Implant[]> = {
       HEAD: [],
-      CHEST: [],
-      ARMS: [],
+      TORSO: [],
       LEGS: [],
-      CLASS_ITEM: [],
+      SHIELD: [],
     };
     for (const implant of implants) {
       if (bySlot[implant.slot]) {
@@ -114,7 +112,7 @@ export default function BuildPlannerPage() {
   const handleShellChange = useCallback((shellId: string) => {
     setSelectedShellId(shellId);
     setSelectedCoreId("");
-    setSelectedImplants({ HEAD: "", CHEST: "", ARMS: "", LEGS: "", CLASS_ITEM: "" });
+    setSelectedImplants({ HEAD: "", TORSO: "", LEGS: "", SHIELD: "" });
   }, []);
 
   // Handle implant selection
@@ -175,10 +173,9 @@ export default function BuildPlannerPage() {
 
       const implantMap: Record<ImplantSlot, string> = {
         HEAD: "",
-        CHEST: "",
-        ARMS: "",
+        TORSO: "",
         LEGS: "",
-        CLASS_ITEM: "",
+        SHIELD: "",
       };
       for (const implantId of build.implantIds) {
         const implant = implants.find((i) => i.id === implantId);

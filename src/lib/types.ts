@@ -1,8 +1,8 @@
-export type Role = "TANK" | "DPS" | "SUPPORT" | "RECON" | "UTILITY";
-export type Rarity = "COMMON" | "UNCOMMON" | "RARE" | "LEGENDARY" | "EXOTIC";
-export type WeaponType = "ASSAULT_RIFLE" | "SMG" | "SNIPER" | "SHOTGUN" | "SIDEARM" | "LMG" | "ROCKET_LAUNCHER" | "GRENADE_LAUNCHER" | "FUSION_RIFLE";
-export type ModSlot = "BARREL" | "MAGAZINE" | "GRIP" | "SCOPE" | "STOCK" | "MUZZLE";
-export type ImplantSlot = "HEAD" | "CHEST" | "ARMS" | "LEGS" | "CLASS_ITEM";
+export type Role = "ASSAULT" | "STEALTH" | "INTEL" | "MOBILITY" | "SUPPORT" | "LOOT" | "SCAVENGER";
+export type Rarity = "STANDARD" | "ENHANCED" | "DELUXE" | "SUPERIOR" | "PRESTIGE";
+export type WeaponType = "ASSAULT_RIFLE" | "SMG" | "PRECISION_RIFLE" | "SHOTGUN" | "PISTOL" | "MACHINE_GUN" | "SNIPER_RIFLE" | "RAILGUN" | "MELEE";
+export type ModSlot = "OPTIC" | "BARREL" | "MAGAZINE" | "GRIP" | "CHIP" | "SHIELD";
+export type ImplantSlot = "HEAD" | "TORSO" | "LEGS" | "SHIELD";
 
 export interface BaseStats {
   [key: string]: number;
@@ -28,6 +28,10 @@ export interface Shell {
   tactAbilityName: string;
   tactAbilityDesc: string;
   tactCooldown: number;
+  trait1Name: string;
+  trait1Desc: string;
+  trait2Name: string;
+  trait2Desc: string;
   baseStats: BaseStats;
   iconUrl: string;
 }
@@ -37,12 +41,16 @@ export interface Weapon {
   name: string;
   type: WeaponType;
   rarity: Rarity;
-  baseDamage: number;
-  fireRate: number;
+  firepower: number;
+  rateOfFire: number;
   range: number;
-  stability: number;
-  handling: number;
+  accuracy: number;
+  magazine: number;
   reloadSpeed: number;
+  recoil: number;
+  precision: number;
+  fireMode: string;
+  ammoType: string;
   description: string;
   iconUrl: string;
 }
@@ -72,6 +80,7 @@ export interface Implant {
   statBonuses: StatModifiers;
   rarity: Rarity;
   description: string;
+  perk: string;
 }
 
 export interface BuildData {

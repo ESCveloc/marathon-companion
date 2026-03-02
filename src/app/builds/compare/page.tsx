@@ -58,12 +58,14 @@ function getStatsForItem(item: any, category: GearCategory): StatModifiers {
       return { ...(item as Shell).baseStats };
     case "weapons":
       return {
-        baseDamage: (item as Weapon).baseDamage,
-        fireRate: (item as Weapon).fireRate,
+        firepower: (item as Weapon).firepower,
+        rateOfFire: (item as Weapon).rateOfFire,
         range: (item as Weapon).range,
-        stability: (item as Weapon).stability,
-        handling: (item as Weapon).handling,
+        accuracy: (item as Weapon).accuracy,
+        magazine: (item as Weapon).magazine,
         reloadSpeed: (item as Weapon).reloadSpeed,
+        recoil: (item as Weapon).recoil,
+        precision: (item as Weapon).precision,
       };
     case "mods":
       return { ...(item as WeaponMod).statModifiers };
@@ -334,8 +336,8 @@ function CompareContent() {
                 const rightVal = rightStats[stat] || 0;
                 const delta = statDelta[stat] || 0;
                 const maxVal =
-                  stat === "fireRate"
-                    ? 1000
+                  stat === "rateOfFire"
+                    ? 1200
                     : Math.max(leftVal, rightVal, 100);
 
                 return (

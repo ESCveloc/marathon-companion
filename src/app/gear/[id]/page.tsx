@@ -115,6 +115,32 @@ function ShellDetail({ shell }: { shell: Shell }) {
             {shell.tactAbilityDesc}
           </p>
         </div>
+
+        {/* Trait 1 */}
+        <div className="card border-l-4 border-l-marathon-green">
+          <h3 className="text-lg font-bold text-marathon-green mb-1">
+            {shell.trait1Name}
+          </h3>
+          <p className="text-xs text-marathon-muted uppercase tracking-wide mb-2">
+            Passive Trait
+          </p>
+          <p className="text-sm text-marathon-text-dim leading-relaxed">
+            {shell.trait1Desc}
+          </p>
+        </div>
+
+        {/* Trait 2 */}
+        <div className="card border-l-4 border-l-marathon-green">
+          <h3 className="text-lg font-bold text-marathon-green mb-1">
+            {shell.trait2Name}
+          </h3>
+          <p className="text-xs text-marathon-muted uppercase tracking-wide mb-2">
+            Passive Trait
+          </p>
+          <p className="text-sm text-marathon-text-dim leading-relaxed">
+            {shell.trait2Desc}
+          </p>
+        </div>
       </div>
     </div>
   );
@@ -122,12 +148,14 @@ function ShellDetail({ shell }: { shell: Shell }) {
 
 function WeaponDetail({ weapon }: { weapon: Weapon }) {
   const statEntries = [
-    { key: "baseDamage", label: "Base Damage", value: weapon.baseDamage },
-    { key: "fireRate", label: "Fire Rate", value: weapon.fireRate, max: 1000 },
-    { key: "range", label: "Range", value: weapon.range },
-    { key: "stability", label: "Stability", value: weapon.stability },
-    { key: "handling", label: "Handling", value: weapon.handling },
-    { key: "reloadSpeed", label: "Reload Speed", value: weapon.reloadSpeed },
+    { key: "firepower", label: "Firepower", value: weapon.firepower },
+    { key: "rateOfFire", label: "Rate of Fire", value: weapon.rateOfFire, max: 1200 },
+    { key: "range", label: "Range", value: weapon.range, max: 200 },
+    { key: "accuracy", label: "Accuracy", value: weapon.accuracy },
+    { key: "magazine", label: "Magazine", value: weapon.magazine },
+    { key: "reloadSpeed", label: "Reload Speed", value: weapon.reloadSpeed, max: 8 },
+    { key: "recoil", label: "Recoil", value: weapon.recoil, max: 150 },
+    { key: "precision", label: "Precision", value: weapon.precision, max: 3 },
   ];
 
   return (

@@ -15,8 +15,8 @@ interface GearCardProps {
 function WeaponStats({ item }: { item: Weapon }) {
   return (
     <div className="flex flex-wrap gap-x-4 gap-y-1 text-xs text-marathon-text-dim mt-2">
-      <span>DMG <span className="text-marathon-text font-medium">{item.baseDamage}</span></span>
-      <span>RPM <span className="text-marathon-text font-medium">{item.fireRate}</span></span>
+      <span>DMG <span className="text-marathon-text font-medium">{item.firepower}</span></span>
+      <span>RPM <span className="text-marathon-text font-medium">{item.rateOfFire}</span></span>
       <span>RNG <span className="text-marathon-text font-medium">{item.range}</span></span>
     </div>
   );

@@ -138,11 +138,13 @@ export default function HomePage() {
           {gearData.shells.map((shell) => {
             const id = slugify(shell.name);
             const roleColors: Record<string, string> = {
-              TANK: "#e63946",
-              DPS: "#e87d0d",
+              ASSAULT: "#e63946",
+              STEALTH: "#6b21a8",
+              INTEL: "#3b82f6",
+              MOBILITY: "#e87d0d",
               SUPPORT: "#2ecc71",
-              RECON: "#3b82f6",
-              UTILITY: "#a855f7",
+              LOOT: "#eab308",
+              SCAVENGER: "#78716c",
             };
             const roleColor = roleColors[shell.role] || "#9ca3af";
 

@@ -14,6 +14,10 @@ interface ShellData {
   tactAbilityName: string;
   tactAbilityDesc: string;
   tactCooldown: number;
+  trait1Name: string;
+  trait1Desc: string;
+  trait2Name: string;
+  trait2Desc: string;
   baseStats: Record<string, number>;
   iconUrl: string;
 }
@@ -22,12 +26,16 @@ interface WeaponData {
   name: string;
   type: string;
   rarity: string;
-  baseDamage: number;
-  fireRate: number;
+  firepower: number;
+  rateOfFire: number;
   range: number;
-  stability: number;
-  handling: number;
+  accuracy: number;
+  magazine: number;
   reloadSpeed: number;
+  recoil: number;
+  precision: number;
+  fireMode: string;
+  ammoType: string;
   description: string;
   iconUrl: string;
 }
@@ -54,6 +62,7 @@ interface ImplantData {
   statBonuses: Record<string, number>;
   rarity: string;
   description: string;
+  perk: string;
 }
 
 interface GearData {
@@ -89,13 +98,17 @@ async function main() {
       data: {
         name: shell.name,
         description: shell.description,
-        role: shell.role as "TANK" | "DPS" | "SUPPORT" | "RECON" | "UTILITY",
+        role: shell.role as "ASSAULT" | "STEALTH" | "INTEL" | "MOBILITY" | "SUPPORT" | "LOOT" | "SCAVENGER",
         primeAbilityName: shell.primeAbilityName,
         primeAbilityDesc: shell.primeAbilityDesc,
         primeCooldown: shell.primeCooldown,
         tactAbilityName: shell.tactAbilityName,
         tactAbilityDesc: shell.tactAbilityDesc,
         tactCooldown: shell.tactCooldown,
+        trait1Name: shell.trait1Name || "",
+        trait1Desc: shell.trait1Desc || "",
+        trait2Name: shell.trait2Name || "",
+        trait2Desc: shell.trait2Desc || "",
         baseStats: shell.baseStats,
         iconUrl: shell.iconUrl || "",
       },
@@ -112,14 +125,18 @@ async function main() {
     await prisma.weapon.create({
       data: {
         name: weapon.name,
-        type: weapon.type as "ASSAULT_RIFLE" | "SMG" | "SNIPER" | "SHOTGUN" | "SIDEARM" | "LMG" | "ROCKET_LAUNCHER" | "GRENADE_LAUNCHER" | "FUSION_RIFLE",
-        rarity: weapon.rarity as "COMMON" | "UNCOMMON" | "RARE" | "LEGENDARY" | "EXOTIC",
-        baseDamage: weapon.baseDamage,
-        fireRate: weapon.fireRate,
+        type: weapon.type as "ASSAULT_RIFLE" | "SMG" | "PRECISION_RIFLE" | "SHOTGUN" | "PISTOL" | "MACHINE_GUN" | "SNIPER_RIFLE" | "RAILGUN" | "MELEE",
+        rarity: weapon.rarity as "STANDARD" | "ENHANCED" | "DELUXE" | "SUPERIOR" | "PRESTIGE",
+        firepower: weapon.firepower,
+        rateOfFire: weapon.rateOfFire,
         range: weapon.range,
-        stability: weapon.stability,
-        handling: weapon.handling,
+        accuracy: weapon.accuracy,
+        magazine: weapon.magazine,
         reloadSpeed: weapon.reloadSpeed,
+        recoil: weapon.recoil,
+        precision: weapon.precision,
+        fireMode: weapon.fireMode || "",
+        ammoType: weapon.ammoType || "",
         description: weapon.description,
         iconUrl: weapon.iconUrl || "",
       },
@@ -136,10 +153,10 @@ async function main() {
     await prisma.weaponMod.create({
       data: {
         name: mod.name,
-        slot: mod.slot as "BARREL" | "MAGAZINE" | "GRIP" | "SCOPE" | "STOCK" | "MUZZLE",
+        slot: mod.slot as "OPTIC" | "BARREL" | "MAGAZINE" | "GRIP" | "CHIP" | "SHIELD",
         statModifiers: mod.statModifiers,
         description: mod.description,
-        rarity: mod.rarity as "COMMON" | "UNCOMMON" | "RARE" | "LEGENDARY" | "EXOTIC",
+        rarity: mod.rarity as "STANDARD" | "ENHANCED" | "DELUXE" | "SUPERIOR" | "PRESTIGE",
       },
     });
     modCount++;
@@ -163,7 +180,7 @@ async function main() {
         shellId,
         abilityModification: core.abilityModification,
         statModifiers: core.statModifiers,
-        rarity: core.rarity as "COMMON" | "UNCOMMON" | "RARE" | "LEGENDARY" | "EXOTIC",
+        rarity: core.rarity as "STANDARD" | "ENHANCED" | "DELUXE" | "SUPERIOR" | "PRESTIGE",
       },
     });
     coreCount++;
@@ -178,10 +195,11 @@ async function main() {
     await prisma.implant.create({
       data: {
         name: implant.name,
-        slot: implant.slot as "HEAD" | "CHEST" | "ARMS" | "LEGS" | "CLASS_ITEM",
+        slot: implant.slot as "HEAD" | "TORSO" | "LEGS" | "SHIELD",
         statBonuses: implant.statBonuses,
-        rarity: implant.rarity as "COMMON" | "UNCOMMON" | "RARE" | "LEGENDARY" | "EXOTIC",
+        rarity: implant.rarity as "STANDARD" | "ENHANCED" | "DELUXE" | "SUPERIOR" | "PRESTIGE",
         description: implant.description,
+        perk: implant.perk || "",
       },
     });
     implantCount++;

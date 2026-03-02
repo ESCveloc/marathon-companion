@@ -1,48 +1,49 @@
 export const RARITY_COLORS: Record<string, string> = {
-  COMMON: "#9ca3af",
-  UNCOMMON: "#2ecc71",
-  RARE: "#3b82f6",
-  LEGENDARY: "#a855f7",
-  EXOTIC: "#f5a623",
+  STANDARD: "#9ca3af",
+  ENHANCED: "#2ecc71",
+  DELUXE: "#3b82f6",
+  SUPERIOR: "#a855f7",
+  PRESTIGE: "#f5a623",
 };
 
-export const RARITY_ORDER = ["COMMON", "UNCOMMON", "RARE", "LEGENDARY", "EXOTIC"] as const;
+export const RARITY_ORDER = ["STANDARD", "ENHANCED", "DELUXE", "SUPERIOR", "PRESTIGE"] as const;
 
 export const ROLE_COLORS: Record<string, string> = {
-  TANK: "#e63946",
-  DPS: "#e87d0d",
+  ASSAULT: "#e63946",
+  STEALTH: "#6b21a8",
+  INTEL: "#3b82f6",
+  MOBILITY: "#e87d0d",
   SUPPORT: "#2ecc71",
-  RECON: "#3b82f6",
-  UTILITY: "#a855f7",
+  LOOT: "#eab308",
+  SCAVENGER: "#78716c",
 };
 
 export const WEAPON_TYPE_LABELS: Record<string, string> = {
   ASSAULT_RIFLE: "Assault Rifle",
   SMG: "SMG",
-  SNIPER: "Sniper Rifle",
+  PRECISION_RIFLE: "Precision Rifle",
   SHOTGUN: "Shotgun",
-  SIDEARM: "Sidearm",
-  LMG: "LMG",
-  ROCKET_LAUNCHER: "Rocket Launcher",
-  GRENADE_LAUNCHER: "Grenade Launcher",
-  FUSION_RIFLE: "Fusion Rifle",
+  PISTOL: "Pistol",
+  MACHINE_GUN: "Machine Gun",
+  SNIPER_RIFLE: "Sniper Rifle",
+  RAILGUN: "Railgun",
+  MELEE: "Melee",
 };
 
 export const MOD_SLOT_LABELS: Record<string, string> = {
+  OPTIC: "Optic",
   BARREL: "Barrel",
   MAGAZINE: "Magazine",
   GRIP: "Grip",
-  SCOPE: "Scope",
-  STOCK: "Stock",
-  MUZZLE: "Muzzle",
+  CHIP: "Chip",
+  SHIELD: "Shield",
 };
 
 export const IMPLANT_SLOT_LABELS: Record<string, string> = {
   HEAD: "Head",
-  CHEST: "Chest",
-  ARMS: "Arms",
+  TORSO: "Torso",
   LEGS: "Legs",
-  CLASS_ITEM: "Class Item",
+  SHIELD: "Shield",
 };
 
 export const STAT_LABELS: Record<string, string> = {
@@ -52,13 +53,26 @@ export const STAT_LABELS: Record<string, string> = {
   resilience: "Resilience",
   recovery: "Recovery",
   heatCapacity: "Heat Capacity",
+  agility: "Agility",
   lootSpeed: "Loot Speed",
+  meleeDamage: "Melee Damage",
+  primeRecovery: "Prime Recovery",
+  tacticalRecovery: "Tactical Recovery",
+  selfRepairSpeed: "Self-Repair Speed",
+  firewall: "Firewall",
+  fallResistance: "Fall Resistance",
+  pingDuration: "Ping Duration",
+  finisherSiphon: "Finisher Siphon",
+  reviveSpeed: "Revive Speed",
+  hardware: "Hardware",
+  firepower: "Firepower",
+  accuracy: "Accuracy",
   range: "Range",
-  stability: "Stability",
-  handling: "Handling",
+  magazine: "Magazine",
   reloadSpeed: "Reload Speed",
-  damage: "Damage",
-  fireRate: "Fire Rate",
+  rateOfFire: "Rate of Fire",
+  recoil: "Recoil",
+  precision: "Precision",
 };
 
 export const NAV_ITEMS = [
