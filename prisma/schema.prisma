@@ -1,0 +1,118 @@
+// ---------------------------------------------------------------------------
+// Prisma schema — Marathon Companion
+// Run: pnpm db:migrate   to apply migrations
+//      pnpm db:seed      to populate with placeholder data
+// ---------------------------------------------------------------------------
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+// ---------------------------------------------------------------------------
+// Runner Shells (7 at launch)
+// ---------------------------------------------------------------------------
+model RunnerShell {
+  id          String  @id @default(cuid())
+  name        String  @unique
+  description String
+  role        String  // Tank | DPS | Support | Recon | Utility
+
+  primeAbilityName        String
+  primeAbilityDescription String
+  primeAbilityCooldown    Int    // seconds
+
+  tacticalAbilityName        String
+  tacticalAbilityDescription String
+  tacticalAbilityCooldown    Int    // seconds
+
+  baseStats Json   // { health: Int, shield: Int, speed: Int, ... }
+  iconUrl   String?
+
+  cores Core[]
+
+  @@map("runner_shells")
+}
+
+// ---------------------------------------------------------------------------
+// Weapons
+// ---------------------------------------------------------------------------
+model Weapon {
+  id          String  @id @default(cuid())
+  name        String  @unique
+  type        String  // WeaponType enum value
+  rarity      String  // common | uncommon | rare | legendary | exotic
+  baseDamage  Float
+  fireRate    Float
+  range       Float
+  stability   Float
+  handling    Float
+  reloadSpeed Float
+  description String
+  iconUrl     String?
+
+  mods WeaponModsOnWeapons[]
+
+  @@map("weapons")
+}
+
+// ---------------------------------------------------------------------------
+// Weapon Mods (400+ at launch)
+// ---------------------------------------------------------------------------
+model WeaponMod {
+  id            String @id @default(cuid())
+  name          String @unique
+  slot          String // Barrel | Magazine | Grip | Scope | Trait
+  statModifiers Json   // { range: 10, stability: -5, ... }
+  description   String
+  rarity        String
+
+  weapons WeaponModsOnWeapons[]
+
+  @@map("weapon_mods")
+}
+
+model WeaponModsOnWeapons {
+  weaponId    String
+  weaponModId String
+
+  weapon    Weapon    @relation(fields: [weaponId], references: [id], onDelete: Cascade)
+  weaponMod WeaponMod @relation(fields: [weaponModId], references: [id], onDelete: Cascade)
+
+  @@id([weaponId, weaponModId])
+  @@map("weapons_on_weapon_mods")
+}
+
+// ---------------------------------------------------------------------------
+// Cores (modify Shell abilities)
+// ---------------------------------------------------------------------------
+model Core {
+  id                  String @id @default(cuid())
+  name                String @unique
+  shellId             String
+  abilityModification String // human-readable description
+  statModifiers       Json   // { speed: 5, ... }
+  rarity              String
+
+  shell RunnerShell @relation(fields: [shellId], references: [id], onDelete: Cascade)
+
+  @@map("cores")
+}
+
+// ---------------------------------------------------------------------------
+// Implants (stat boosts, one per slot)
+// ---------------------------------------------------------------------------
+model Implant {
+  id          String @id @default(cuid())
+  name        String @unique
+  slot        String // Head | Chest | Arms | Legs | Class
+  statBonuses Json   // { heatCapacity: 15, lootSpeed: 8, ... }
+  rarity      String
+  description String
+
+  @@map("implants")
+}
